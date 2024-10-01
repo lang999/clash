@@ -1,0 +1,123 @@
+{
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "P § 0",
+      "server": "stock.hostmonit.com",
+      "server_port": 2052,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "P § 1",
+      "server": "stock.hostmonit.com",
+      "server_port": 2095,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "P § 2",
+      "server": "stock.hostmonit.com",
+      "server_port": 8880,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "P § 3",
+      "server": "stock.hostmonit.com",
+      "server_port": 80,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "P § 4",
+      "server": "stock.hostmonit.com",
+      "server_port": 2082,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "P § 5",
+      "server": "stock.hostmonit.com",
+      "server_port": 2086,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "P § 6",
+      "server": "stock.hostmonit.com",
+      "server_port": 8080,
+      "uuid": "21ef2919-6799-471f-8eb1-ff6aeef642e5",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "927tg.tzib1cqz.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    }
+  ]
+}
