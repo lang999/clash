@@ -1,644 +1,801 @@
 {
+  "experimental": {
+    "clash_api": {
+      "external_controller": "",
+      "secret": ""
+    },
+    "debug": {
+      "max_threads": null,
+      "panic_on_fault": false,
+      "listen": null
+    },
+    "cache_file": {
+      "enabled": false,
+      "path": "",
+      "store_fakeip": true
+    }
+  },
   "log": {
-    "level": "warn",
+    "disabled": false,
+    "level": "info",
+    "output": "",
     "timestamp": true
   },
+  "ntp": {
+    "enabled": false,
+    "server": "time.windows.com",
+    "server_port": 123,
+    "interval": "12h",
+    "detour": "direct_out"
+  },
   "dns": {
-    "servers": [
-      {
-        "tag": "dns-remote",
-        "address": "udp://1.1.1.1",
-        "address_resolver": "dns-direct"
-      },
-      {
-        "tag": "dns-trick-direct",
-        "address": "https://sky.rethinkdns.com/",
-        "detour": "direct-fragment"
-      },
-      {
-        "tag": "dns-direct",
-        "address": "223.5.5.5",
-        "address_resolver": "dns-local",
-        "detour": "direct"
-      },
-      {
-        "tag": "dns-local",
-        "address": "local",
-        "detour": "direct"
-      },
-      {
-        "tag": "dns-block",
-        "address": "rcode://success"
-      }
-    ],
+    "final": "dns_proxy_out",
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.20.0.0/15"
+    },
     "rules": [
       {
         "domain": [
-          "jpn-02-zz.manatraffic.top",
-          "usa.elinks.online",
-          "cmhk-nat-01-chris.cmhk.live",
-          "sgp-01-zz.manatraffic.top",
-          "twn-01-zz.manatraffic.top",
-          "twn-02-zz.manatraffic.top",
-          "hkg-02-zz.manatraffic.top",
-          "hkg-03-zz.manatraffic.top",
-          "sgp-03-zz.manatraffic.top",
-          "usa-01-zz.manatraffic.top",
-          "jpn-01-zz.manatraffic.top"
+          "aafrtpfxr.twl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.hkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.hkl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.hkl04i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.hkl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.sgl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.sgl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.myl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.myl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.jpl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.jpl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.jpl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.jpl04i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.krl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.aul01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.idl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.inl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.thl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.vnl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.nll01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.phl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.pkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.rul01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.trl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.usl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.usl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.cal01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.del01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.frl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.gbl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.ael01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.arl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+          "aafrtpfxr.brl01i9zjfegelp.5xfsur8v62.gosdk.xyz"
         ],
-        "server": "dns-direct"
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200
       },
       {
-        "domain": "cp.cloudflare.com",
-        "server": "dns-remote",
-        "rewrite_ttl": 3000
+        "domain_suffix": [
+          "o4508911573663744.ingest.sentry.io"
+        ],
+        "server": "dns_direct_out",
+        "rewrite_ttl": 43200
       },
       {
-        "domain_suffix": ".cn",
-        "server": "dns-direct"
+        "domain_suffix": [
+          "speed.cloudflare.com"
+        ],
+        "server": "dns_proxy_out",
+        "rewrite_ttl": 43200
+      },
+      {
+        "domain_suffix": [
+          "karing.app"
+        ],
+        "server": "dns_proxy_out",
+        "rewrite_ttl": 43200
       },
       {
         "rule_set": [
-          "geoip-cn",
-          "geosite-cn"
+          "geosite:cn"
         ],
-        "server": "dns-direct"
+        "server": "dns_direct_out",
+        "rewrite_ttl": 43200
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip_out",
+        "rewrite_ttl": 1,
+        "disable_cache": true
       }
     ],
-    "final": "dns-remote",
-    "static_ips": {
-      "sky.rethinkdns.com": [
-        "104.17.148.22",
-        "104.17.147.22",
-        "104.21.83.62",
-        "172.67.214.246",
-        "2606:4700:3030::ac43:d6f6",
-        "2606:4700:3030::6815:533e"
-      ]
-    },
-    "independent_cache": true
+    "servers": [
+      {
+        "tag": "dns_outbound_out",
+        "address": "local"
+      },
+      {
+        "tag": "dns_direct_out",
+        "address": "local"
+      },
+      {
+        "tag": "dns_proxy_out",
+        "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "dns_resolver_out",
+        "detour": "urltest_out"
+      },
+      {
+        "tag": "dns_resolver_out",
+        "address": "local"
+      },
+      {
+        "tag": "dns_block_out",
+        "address": "rcode://success"
+      },
+      {
+        "tag": "dns_fakeip_out",
+        "address": "fakeip"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "cache_capacity": 1024
   },
   "inbounds": [
     {
-      "type": "tun",
-      "tag": "tun-in",
-      "mtu": 9000,
-      "inet4_address": "172.19.0.1/28",
-      "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true,
-      "stack": "gvisor",
-      "sniff": true
+      "type": "mixed",
+      "tag": "mixed_in_direct",
+      "set_system_proxy": false,
+      "listen": "127.0.0.1",
+      "listen_port": 3065,
+      "sniff": true,
+      "sniff_override_destination": false
     },
     {
       "type": "mixed",
-      "tag": "mixed-in",
+      "tag": "mixed_in_proxy",
+      "set_system_proxy": false,
       "listen": "127.0.0.1",
-      "listen_port": 12334,
+      "listen_port": 3066,
       "sniff": true,
-      "sniff_override_destination": true
+      "sniff_override_destination": false
     },
     {
-      "type": "direct",
-      "tag": "dns-in",
+      "type": "mixed",
+      "tag": "mixed_in_rule",
+      "set_system_proxy": false,
       "listen": "127.0.0.1",
-      "listen_port": 16450
+      "listen_port": 3067,
+      "sniff": true,
+      "sniff_override_destination": false
     }
   ],
   "outbounds": [
     {
-      "type": "selector",
-      "tag": "select",
-      "outbounds": [
-        "auto",
-        "移动4g专用02|918 § 0",
-        "P § 1",
-        "P1 § 2",
-        "美国hy2-1 § 3",
-        "移动4g专用01|695 § 4",
-        "移动4g专用02|894 § 5",
-        "移动4g专用03|102 § 6",
-        "_🇺🇸_💼_SSRSUB_6266373737613234 § 7",
-        "_🇺🇸_💼_SSRSUB_3763633930633330 § 8",
-        "_🇰🇷_💻_SSRSUB_3736626164646234 § 9",
-        "_🇺🇸_💼_SSRSUB_6263313235616438 § 10",
-        "_🇺🇸_💼_SSRSUB_3361343832313134 § 11",
-        "🇭🇰 香港B § 12",
-        "🇭🇰 香港C § 13",
-        "🇭🇰 香港D § 14",
-        "🇭🇰香港 防失联 § 15",
-        "🇯🇵日本 防失联 01 § 16",
-        "🇯🇵日本 防失联 02 § 17",
-        "🇺🇸美国 防失联 01 § 18",
-        "🇺🇸美国 防失联 04 § 19",
-        "🇬🇧英国防失联 01 § 20",
-        "🇬🇧英国防失联 02 § 21",
-        "🇭🇰 香港 - 02 - 0.5X § 22",
-        "🇭🇰 香港 - 03 - 0.5X § 23",
-        "🇸🇬 新加坡 - 01 - 0.5X § 24",
-        "🇸🇬 新加坡 - 03 - 0.5X § 25",
-        "🇨🇳 台湾 - 01 - 0.5X § 26",
-        "🇨🇳 台湾 - 02 - 0.5X § 27",
-        "🇺🇸 美国 - 01 - 0.5X § 28",
-        "🇯🇵 日本 - 01 - 0.5X § 29",
-        "🇯🇵 日本 - 02 - 0.5X § 30",
-        "🇺🇸美国 防失联 05 § 31"
-      ],
-      "default": "auto",
-      "interrupt_exist_connections": true
+      "server": "aafrtpfxr.twl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27201,
+      "tag": "🇨🇳 碧海☁️ 台湾-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.hkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27101,
+      "tag": "🇭🇰 碧海☁️ 香港-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.hkl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27102,
+      "tag": "🇭🇰 碧海☁️ 香港-02",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.hkl04i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27103,
+      "tag": "🇭🇰 碧海☁️ 香港-03",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.hkl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 10465,
+      "tag": "🇭🇰 碧海☁️ 香港-04",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.sgl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27401,
+      "tag": "🇸🇬 碧海☁️ 新加坡-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.sgl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 42881,
+      "tag": "🇸🇬 碧海☁️ 新加坡-02",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.myl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43393,
+      "tag": "🇲🇾 碧海☁️ 马来西亚-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.myl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43383,
+      "tag": "🇲🇾 碧海☁️ 马来西亚-02",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.jpl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27001,
+      "tag": "🇯🇵 碧海☁️ 日本-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.jpl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27002,
+      "tag": "🇯🇵 碧海☁️ 日本-02",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.jpl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 22271,
+      "tag": "🇯🇵 碧海☁️ 日本-03",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.jpl04i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 22269,
+      "tag": "🇯🇵 碧海☁️ 日本-04",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.krl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 46668,
+      "tag": "🇰🇷 碧海☁️ 韩国-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.aul01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 34017,
+      "tag": "🇦🇺 碧海☁️ 澳大利亚-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.idl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43394,
+      "tag": "🇮🇩 碧海☁️ 印尼-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.inl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 42882,
+      "tag": "🇮🇳 碧海☁️ 印度-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.thl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43395,
+      "tag": "🇹🇭 碧海☁️ 泰国-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.vnl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43396,
+      "tag": "🇻🇳 碧海☁️ 越南-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.nll01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43591,
+      "tag": "🇳🇱 碧海☁️ 荷兰-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.phl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27408,
+      "tag": "🇵🇭 碧海☁️ 菲律宾-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.pkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 42883,
+      "tag": "🇵🇰 碧海☁️ 巴基斯坦-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.rul01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 46925,
+      "tag": "🇷🇺 碧海☁️ 俄罗斯-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.trl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43397,
+      "tag": "🇹🇷 碧海☁️ 土耳其-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.usl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 33505,
+      "tag": "🇺🇸 碧海☁️ 美国-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.usl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 33506,
+      "tag": "🇺🇸 碧海☁️ 美国-02",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.cal01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 34016,
+      "tag": "🇨🇦 碧海☁️ 加拿大-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.del01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43583,
+      "tag": "🇩🇪 碧海☁️ 德国-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.frl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43498,
+      "tag": "🇫🇷 碧海☁️ 法国-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.gbl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 44397,
+      "tag": "🇬🇧 碧海☁️ 英国-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.ael01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43497,
+      "tag": "🇦🇪 碧海☁️ 迪拜-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.arl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43590,
+      "tag": "🇦🇷 碧海☁️ 阿根廷-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "server": "aafrtpfxr.brl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 43586,
+      "tag": "🇧🇷 碧海☁️ 巴西-01",
+      "type": "trojan",
+      "password": "00adf586-fdca-461d-8ab6-bdb83e97f8ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn",
+        "insecure": false,
+        "utls": {
+          "enabled": true
+        }
+      }
     },
     {
       "type": "urltest",
-      "tag": "auto",
+      "tag": "urltest_out",
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "8h",
+      "interrupt_exist_connections": false,
+      "idle_timeout": "8h",
       "outbounds": [
-        "移动4g专用02|918 § 0",
-        "P § 1",
-        "P1 § 2",
-        "美国hy2-1 § 3",
-        "移动4g专用01|695 § 4",
-        "移动4g专用02|894 § 5",
-        "移动4g专用03|102 § 6",
-        "_🇺🇸_💼_SSRSUB_6266373737613234 § 7",
-        "_🇺🇸_💼_SSRSUB_3763633930633330 § 8",
-        "_🇰🇷_💻_SSRSUB_3736626164646234 § 9",
-        "_🇺🇸_💼_SSRSUB_6263313235616438 § 10",
-        "_🇺🇸_💼_SSRSUB_3361343832313134 § 11",
-        "🇭🇰 香港B § 12",
-        "🇭🇰 香港C § 13",
-        "🇭🇰 香港D § 14",
-        "🇭🇰香港 防失联 § 15",
-        "🇯🇵日本 防失联 01 § 16",
-        "🇯🇵日本 防失联 02 § 17",
-        "🇺🇸美国 防失联 01 § 18",
-        "🇺🇸美国 防失联 04 § 19",
-        "🇬🇧英国防失联 01 § 20",
-        "🇬🇧英国防失联 02 § 21",
-        "🇭🇰 香港 - 02 - 0.5X § 22",
-        "🇭🇰 香港 - 03 - 0.5X § 23",
-        "🇸🇬 新加坡 - 01 - 0.5X § 24",
-        "🇸🇬 新加坡 - 03 - 0.5X § 25",
-        "🇨🇳 台湾 - 01 - 0.5X § 26",
-        "🇨🇳 台湾 - 02 - 0.5X § 27",
-        "🇺🇸 美国 - 01 - 0.5X § 28",
-        "🇯🇵 日本 - 01 - 0.5X § 29",
-        "🇯🇵 日本 - 02 - 0.5X § 30",
-        "🇺🇸美国 防失联 05 § 31"
-      ],
-      "url": "http://cp.cloudflare.com",
-      "interval": "10m0s",
-      "tolerance": 1,
-      "idle_timeout": "30m0s",
-      "interrupt_exist_connections": true
-    },
-    {
-      "type": "vmess",
-      "tag": "移动4g专用02|918 § 0",
-      "server": "183.237.84.53",
-      "server_port": 55002,
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
-      "security": "auto",
-      "alter_id": 64,
-      "authenticated_length": true,
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vmess",
-      "tag": "P § 1",
-      "server": "120.198.71.219",
-      "server_port": 50095,
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
-      "security": "auto",
-      "alter_id": 64,
-      "authenticated_length": true,
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vmess",
-      "tag": "P1 § 2",
-      "server": "120.232.153.40",
-      "server_port": 40002,
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
-      "security": "auto",
-      "alter_id": 64,
-      "authenticated_length": true,
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "美国hy2-1 § 3",
-      "server": "usa.elinks.online",
-      "server_port": 8443,
-      "password": "791be305-dd5d-444d-a29e-82cdf03e5b7a",
-      "tls": {
-        "enabled": true,
-        "server_name": "usa.elinks.online"
-      }
-    },
-    {
-      "type": "vmess",
-      "tag": "移动4g专用01|695 § 4",
-      "server": "120.232.153.9",
-      "server_port": 50029,
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
-      "security": "auto",
-      "alter_id": 64,
-      "authenticated_length": true,
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vmess",
-      "tag": "移动4g专用02|894 § 5",
-      "server": "120.198.44.126",
-      "server_port": 47883,
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
-      "security": "auto",
-      "alter_id": 64,
-      "authenticated_length": true,
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vmess",
-      "tag": "移动4g专用03|102 § 6",
-      "server": "120.210.205.134",
-      "server_port": 47459,
-      "uuid": "83a424d8-4bcb-4cee-b016-2c8f1db4a921",
-      "security": "auto",
-      "alter_id": 64,
-      "authenticated_length": true,
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "_🇺🇸_💼_SSRSUB_6266373737613234 § 7",
-      "server": "35.86.174.240",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "_🇺🇸_💼_SSRSUB_3763633930633330 § 8",
-      "server": "34.220.99.193",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "_🇰🇷_💻_SSRSUB_3736626164646234 § 9",
-      "server": "154.90.63.177",
-      "server_port": 989,
-      "method": "aes-256-cfb",
-      "password": "f8f7aCzcPKbsF8p3"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "_🇺🇸_💼_SSRSUB_6263313235616438 § 10",
-      "server": "54.190.1.125",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "_🇺🇸_💼_SSRSUB_3361343832313134 § 11",
-      "server": "35.89.131.134",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "type": "vless",
-      "tag": "🇭🇰 香港B § 12",
-      "server": "162.245.221.156",
-      "server_port": 23396,
-      "uuid": "4576d019-c0d5-4b0c-ad9c-f814f831a2bc",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "wetv.vip",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "Yb8Zxvx9dkOQWK_mHPv5dWoi86EWpTE9PQEdafDXzQk",
-          "short_id": "2b5389278f47"
-        }
-      },
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vless",
-      "tag": "🇭🇰 香港C § 13",
-      "server": "213.218.255.57",
-      "server_port": 44979,
-      "uuid": "a2dd3118-dcd6-46dc-aea0-a435433263cb",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "apps.apple.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "safari"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "SYnNRLY9ed4vCycelUvps6-GLB5gelwrV855wD0dJQ4",
-          "short_id": "8d675df7"
-        }
-      },
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vless",
-      "tag": "🇭🇰 香港D § 14",
-      "server": "cmhk-nat-01-chris.cmhk.live",
-      "server_port": 51146,
-      "uuid": "1506052d-cd8e-462b-b3d1-d6366aad0dee",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "wetv.vip",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "WKnZyxBsfAHn115UN8k1VlAeKPvbiYZSqnjOZG5WamU",
-          "short_id": "ec720f42"
-        }
-      },
-      "packet_encoding": "xudp"
-    },
-    {
-      "type": "vmess",
-      "tag": "🇭🇰香港 防失联 § 15",
-      "server": "140.238.8.194",
-      "server_port": 15800,
-      "uuid": "bf8684a7-77b6-4f48-fb6f-4ac4fbdfc3bb",
-      "security": "auto",
-      "authenticated_length": true,
-      "tls": {
-        "enabled": true,
-        "server_name": "hkyecao01.pukepai.lol",
-        "alpn": "http/1.1",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "packet_encoding": "xudp",
-      "transport": {
-        "type": "ws",
-        "path": "/bf8684a7",
-        "headers": {
-          "Host": "hkyecao01.pukepai.lol"
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vmess",
-      "tag": "🇯🇵日本 防失联 01 § 16",
-      "server": "140.83.60.77",
-      "server_port": 37693,
-      "uuid": "81219fe2-6979-4fb9-c804-6b2343dfb76a",
-      "security": "auto",
-      "authenticated_length": true,
-      "packet_encoding": "xudp",
-      "transport": {
-        "type": "http",
-        "host": "youku.com",
-        "path": "/",
-        "method": "GET"
-      }
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇯🇵日本 防失联 02 § 17",
-      "server": "140.83.60.77",
-      "server_port": 59123,
-      "method": "aes-256-gcm",
-      "password": "8Ummm8h0AN",
-      "plugin": "obfs-local;obfs=http;obfs-host=youku.com"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇺🇸美国 防失联 01 § 18",
-      "server": "107.173.230.12",
-      "server_port": 46265,
-      "method": "aes-256-gcm",
-      "password": "bndURzBoMWFDTjRmMWhzdEpINndtWHZmWlBuZm11UTA=",
-      "plugin": "obfs-local;obfs=http;obfs-host=youku.com"
-    },
-    {
-      "type": "vmess",
-      "tag": "🇺🇸美国 防失联 04 § 19",
-      "server": "107.172.104.75",
-      "server_port": 43439,
-      "uuid": "354444b1-073a-43e1-8cda-d961e9cd9da0",
-      "security": "auto",
-      "authenticated_length": true,
-      "packet_encoding": "xudp",
-      "transport": {
-        "type": "http",
-        "host": "youku.com",
-        "path": "/",
-        "method": "GET"
-      }
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇬🇧英国防失联 01 § 20",
-      "server": "132.145.62.218",
-      "server_port": 11058,
-      "method": "aes-256-gcm",
-      "password": "wx047tK3jM",
-      "plugin": "obfs-local;obfs=http;obfs-host=youku.com"
-    },
-    {
-      "type": "vmess",
-      "tag": "🇬🇧英国防失联 02 § 21",
-      "server": "132.145.62.218",
-      "server_port": 11562,
-      "uuid": "7d65c996-9c3e-4fd5-d298-cf0377afb45f",
-      "security": "auto",
-      "authenticated_length": true,
-      "packet_encoding": "xudp",
-      "transport": {
-        "type": "http",
-        "host": "m.qiyi.com",
-        "path": "/",
-        "method": "GET"
-      }
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇭🇰 香港 - 02 - 0.5X § 22",
-      "server": "hkg-02-zz.manatraffic.top",
-      "server_port": 11412,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇭🇰 香港 - 03 - 0.5X § 23",
-      "server": "hkg-03-zz.manatraffic.top",
-      "server_port": 11413,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇸🇬 新加坡 - 01 - 0.5X § 24",
-      "server": "sgp-01-zz.manatraffic.top",
-      "server_port": 11561,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇸🇬 新加坡 - 03 - 0.5X § 25",
-      "server": "sgp-03-zz.manatraffic.top",
-      "server_port": 11563,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇨🇳 台湾 - 01 - 0.5X § 26",
-      "server": "twn-01-zz.manatraffic.top",
-      "server_port": 12821,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇨🇳 台湾 - 02 - 0.5X § 27",
-      "server": "twn-02-zz.manatraffic.top",
-      "server_port": 12822,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇺🇸 美国 - 01 - 0.5X § 28",
-      "server": "usa-01-zz.manatraffic.top",
-      "server_port": 13501,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇯🇵 日本 - 01 - 0.5X § 29",
-      "server": "jpn-01-zz.manatraffic.top",
-      "server_port": 14201,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇯🇵 日本 - 02 - 0.5X § 30",
-      "server": "jpn-02-zz.manatraffic.top",
-      "server_port": 14202,
-      "method": "chacha20-ietf-poly1305",
-      "password": "37e6e4bd-45c0-4a92-aedf-cc87ce642db9"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇺🇸美国 防失联 05 § 31",
-      "server": "107.172.104.75",
-      "server_port": 14958,
-      "method": "aes-256-gcm",
-      "password": "FuT1RgtyzH",
-      "plugin": "obfs-local;obfs=http;obfs-host=youku.com"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
+        "🇨🇳 碧海☁️ 台湾-01",
+        "🇭🇰 碧海☁️ 香港-01",
+        "🇭🇰 碧海☁️ 香港-02",
+        "🇭🇰 碧海☁️ 香港-03",
+        "🇭🇰 碧海☁️ 香港-04",
+        "🇸🇬 碧海☁️ 新加坡-01",
+        "🇸🇬 碧海☁️ 新加坡-02",
+        "🇲🇾 碧海☁️ 马来西亚-01",
+        "🇲🇾 碧海☁️ 马来西亚-02",
+        "🇯🇵 碧海☁️ 日本-01",
+        "🇯🇵 碧海☁️ 日本-02",
+        "🇯🇵 碧海☁️ 日本-03",
+        "🇯🇵 碧海☁️ 日本-04",
+        "🇰🇷 碧海☁️ 韩国-01",
+        "🇦🇺 碧海☁️ 澳大利亚-01",
+        "🇮🇩 碧海☁️ 印尼-01",
+        "🇮🇳 碧海☁️ 印度-01",
+        "🇹🇭 碧海☁️ 泰国-01",
+        "🇻🇳 碧海☁️ 越南-01",
+        "🇳🇱 碧海☁️ 荷兰-01",
+        "🇵🇭 碧海☁️ 菲律宾-01",
+        "🇵🇰 碧海☁️ 巴基斯坦-01",
+        "🇷🇺 碧海☁️ 俄罗斯-01",
+        "🇹🇷 碧海☁️ 土耳其-01",
+        "🇺🇸 碧海☁️ 美国-01",
+        "🇺🇸 碧海☁️ 美国-02",
+        "🇨🇦 碧海☁️ 加拿大-01",
+        "🇩🇪 碧海☁️ 德国-01",
+        "🇫🇷 碧海☁️ 法国-01",
+        "🇬🇧 碧海☁️ 英国-01",
+        "🇦🇪 碧海☁️ 迪拜-01",
+        "🇦🇷 碧海☁️ 阿根廷-01",
+        "🇧🇷 碧海☁️ 巴西-01"
+      ]
     },
     {
       "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "direct",
-      "tag": "direct-fragment",
-      "tls_fragment": {
-        "enabled": true,
-        "size": "10-30",
-        "sleep": "2-8"
-      }
-    },
-    {
-      "type": "direct",
-      "tag": "bypass"
+      "tag": "direct_out"
     },
     {
       "type": "block",
-      "tag": "block"
+      "tag": "block_out"
+    },
+    {
+      "type": "dns",
+      "tag": "dns_out"
     }
   ],
   "route": {
+    "final": "urltest_out",
+    "find_process": true,
+    "auto_detect_interface": true,
     "rules": [
       {
-        "inbound": "tun-in",
-        "package_name": "app.hiddify.com",
-        "outbound": "bypass"
+        "inbound": [
+          "mixed_in_direct"
+        ],
+        "outbound": "direct_out"
       },
       {
-        "inbound": "dns-in",
-        "outbound": "dns-out"
+        "inbound": [
+          "mixed_in_proxy"
+        ],
+        "outbound": "urltest_out"
       },
       {
-        "port": 53,
-        "outbound": "dns-out"
+        "protocol": "dns",
+        "outbound": "dns_out"
       },
       {
-        "domain_suffix": ".cn",
-        "outbound": "direct"
+        "domain_suffix": [
+          "o4508911573663744.ingest.sentry.io"
+        ],
+        "outbound": "direct_out"
+      },
+      {
+        "domain_suffix": [
+          "speed.cloudflare.com"
+        ],
+        "outbound": "urltest_out"
+      },
+      {
+        "domain_suffix": [
+          "karing.app"
+        ],
+        "outbound": "direct_out"
       },
       {
         "rule_set": [
-          "geoip-cn",
-          "geosite-cn"
+          "geosite:cn"
         ],
-        "outbound": "direct"
+        "outbound": "direct_out"
+      },
+      {
+        "rule_set": [
+          "geoip:cn"
+        ],
+        "outbound": "direct_out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct_out"
       }
     ],
     "rule_set": [
       {
+        "tag": "geosite:cn",
         "type": "remote",
-        "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-cn.srs",
-        "update_interval": "120h0m0s"
+        "url": "https://github.com/KaringX/karing-ruleset/raw/sing/geo/geosite/cn.srs",
+        "download_detour": "urltest_out"
       },
       {
+        "tag": "geoip:cn",
         "type": "remote",
-        "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-cn.srs",
-        "update_interval": "120h0m0s"
+        "url": "https://github.com/KaringX/karing-ruleset/raw/sing/geo/geoip/cn.srs",
+        "download_detour": "urltest_out"
       }
-    ],
-    "final": "select",
-    "auto_detect_interface": true,
-    "override_android_vpn": true
-  },
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "clash.db"
-    },
-    "clash_api": {
-      "external_controller": "127.0.0.1:16756",
-      "secret": "-rYPaunx9lReRKXq"
-    }
+    ]
   }
 }
-
-
