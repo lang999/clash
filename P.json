@@ -25,81 +25,199 @@
     "enabled": false,
     "server": "time.windows.com",
     "server_port": 123,
-    "interval": "12h",
-    "detour": "direct_out"
+    "interval": "12h"
   },
   "dns": {
     "final": "dns_proxy_out",
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.20.0.0/15"
-    },
-    "rules": [
+    "servers": [
       {
-        "domain": [
-          "aafrtpfxr.twl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.hkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.hkl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.hkl04i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.hkl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.sgl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.sgl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.myl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.myl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.jpl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.jpl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.jpl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.jpl04i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.krl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.aul01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.idl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.inl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.thl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.vnl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.nll01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.phl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.pkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.rul01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.trl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.usl02i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.usl03i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.cal01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.del01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.frl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.gbl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.ael01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.arl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
-          "aafrtpfxr.brl01i9zjfegelp.5xfsur8v62.gosdk.xyz"
-        ],
-        "server": "dns_outbound_out",
-        "rewrite_ttl": 43200
+        "tag": "local",
+        "type": "local"
       },
+      {
+        "tag": "udp://8.8.8.8",
+        "type": "udp",
+        "server": "8.8.8.8",
+        "server_port": 53
+      },
+      {
+        "tag": "udp://223.6.6.6",
+        "type": "udp",
+        "server": "223.6.6.6",
+        "server_port": 53
+      },
+      {
+        "tag": "https://1.1.1.1/dns-query",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query"
+      },
+      {
+        "tag": "https://dns.google/dns-query",
+        "type": "https",
+        "server": "dns.google",
+        "server_port": 443,
+        "domain_resolver": "dns_resolver_out",
+        "path": "/dns-query"
+      },
+      {
+        "tag": "detour:https://1.1.1.1/dns-query",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "detour": "urltest_out",
+        "path": "/dns-query"
+      },
+      {
+        "tag": "detour:https://dns.google/dns-query",
+        "type": "https",
+        "server": "dns.google",
+        "server_port": 443,
+        "domain_resolver": "dns_resolver_out",
+        "detour": "urltest_out",
+        "path": "/dns-query"
+      },
+      {
+        "tag": "dns_block_out",
+        "type": "predefined",
+        "rcode": "NOERROR"
+      },
+      {
+        "tag": "dns_outbound_out",
+        "type": "batch",
+        "servers": [
+          "local",
+          "udp://8.8.8.8",
+          "udp://223.6.6.6"
+        ]
+      },
+      {
+        "tag": "dns_direct_out",
+        "type": "batch",
+        "servers": [
+          "local",
+          "udp://8.8.8.8",
+          "udp://223.6.6.6"
+        ]
+      },
+      {
+        "tag": "dns_proxy_out",
+        "type": "batch",
+        "servers": [
+          "detour:https://1.1.1.1/dns-query",
+          "detour:https://dns.google/dns-query"
+        ]
+      },
+      {
+        "tag": "dns_resolver_out",
+        "type": "batch",
+        "servers": [
+          "local",
+          "https://1.1.1.1/dns-query",
+          "udp://223.6.6.6"
+        ]
+      },
+      {
+        "tag": "dns_fakeip_out",
+        "type": "fakeip",
+        "inet4_range": "198.20.0.0/15"
+      }
+    ],
+    "rules": [
       {
         "domain_suffix": [
           "o4508911573663744.ingest.sentry.io"
         ],
         "server": "dns_direct_out",
+        "client_subnet": "43.203.222.230",
+        "name": "direct[karing][dns]",
         "rewrite_ttl": 43200
       },
       {
         "domain_suffix": [
           "speed.cloudflare.com"
         ],
-        "server": "dns_proxy_out",
-        "rewrite_ttl": 43200
+        "server": "dns_fakeip_out",
+        "name": "proxy[karing][dns]"
       },
       {
         "domain_suffix": [
           "karing.app"
         ],
-        "server": "dns_proxy_out",
-        "rewrite_ttl": 43200
+        "server": "dns_fakeip_out",
+        "name": "proxy[karing][dns]"
       },
       {
         "rule_set": [
           "geosite:cn"
         ],
         "server": "dns_direct_out",
+        "client_subnet": "43.203.222.230",
+        "name": "cn[geosite][dns]",
+        "rewrite_ttl": 43200
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "action": "route",
+        "server": "dns_fakeip_out",
+        "rewrite_ttl": 1,
+        "disable_cache": true,
+        "name": "[dns-fakeip]"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "cache_capacity": 1024
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed_in_direct",
+      "set_system_proxy": false,
+      "listen": "127.0.0.1",
+      "listen_port": 3065
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed_in_proxy",
+      "set_system_proxy": false,
+      "listen": "127.0.0.1",
+      "listen_port": 3066
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed_in_rule",
+      "set_system_proxy": false,
+      "listen": "127.0.0.1",
+      "listen_port": 3067
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "us2.qiangdong.xyz",
+      "server_port": 1052,
+      "tag": "🇺🇸 美国 Edge [02]",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "VXPipi29nxMO",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=182039459a34f64238143cd31ddebbc914362.taobao.com",
+      "network": "tcp"
+    },
+    {
+      "server": "tt.huawei-api.top",
+      "server_port": 19561,
+      "tag": "US PONYNET 04",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "password": "2ba85e09-7ae8-417d-8c91-05b3b954771e"
+    },
+    {
+      "server": "n1.hua        "server": "dns_direct_out",
         "rewrite_ttl": 43200
       },
       {
