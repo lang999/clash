@@ -1,0 +1,3304 @@
+mode: rule
+log-level: warning
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+keep-alive-interval: 15
+keep-alive-idle: 600
+mixed-port: 7890
+port: 7891
+socks-port: 7892
+redir-port: 7893
+tproxy-port: 7895
+allow-lan: true
+bind-address: '*'
+external-controller: 127.0.0.1:9090
+secret: '1111111'
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+      override-destination: true
+    TLS:
+      ports:
+        - 443
+        - 8443
+    QUIC:
+      ports:
+        - 443
+        - 8443
+  skip-domain:
+    - Mijia Cloud
+    - +.push.apple.com
+    - +.apple.com
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  use-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  respect-rules: true
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.localhost
+    - stun.*.*
+    - stun.*.*.*
+    - time.*.com
+    - ntp.*.com
+    - +.push.apple.com
+proxies:
+  - name: 🇭🇰 香港-001
+    type: trojan
+    server: hk-007.pg13900.com
+    port: 443
+    udp: true
+    password: a4dbc061021f2931c0e28901a602f3c5
+    sni: hk-007.pg13900.com
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /atlas-cdn
+      headers:
+        Host: hk-007.pg13900.com
+  - name: 🇭🇰 香港-003
+    type: anytls
+    server: ahk.jueduibupao.top
+    port: 7000
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: www.microsoft.com
+    servername: www.microsoft.com
+    skip-cert-verify: true
+  - name: 🇭🇰 香港-004
+    type: anytls
+    server: dafeizhu.xxxyun.top
+    port: 55001
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: atlhk1.jueduibupao.top
+    servername: atlhk1.jueduibupao.top
+    skip-cert-verify: true
+  - name: 🇭🇰 香港-005
+    type: anytls
+    server: xiaofeizhu.xxxyun.top
+    port: 55001
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: atlhk1.jueduibupao.top
+    servername: atlhk1.jueduibupao.top
+    skip-cert-verify: true
+  - name: 🇭🇰 香港-031
+    type: vless
+    server: aws-link2.liangxin1.xyz
+    port: 38725
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: HvwnLBMMKsmvghGX5yVPq3J2HWxwr1GGQB2WIvbPvAY
+      short-id: 8f6ca378
+  - name: 🇭🇰 香港-032
+    type: vless
+    server: aws-link3.liangxin1.xyz
+    port: 27758
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: EYa4ic3GAxqznV61U-OOww-WKsu5wuQQptyS3fw7czM
+      short-id: c50db39f
+  - name: 🇭🇰 香港-033
+    type: vless
+    server: aws-link4.liangxin1.xyz
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 3FPGTaxkfOM3nEUWUyCiqkH5oJGsOx-WxPJfADi1QWY
+      short-id: 7f369e14
+  - name: 🇭🇰 香港-034
+    type: vless
+    server: aws-link5.liangxin1.xyz
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: a11gdDetacKBsiBBfhsPvanTGMtVyZEIvax7gU5Wplg
+      short-id: 9bf38508
+  - name: 🇭🇰 香港-035
+    type: vless
+    server: aws-link6.liangxin1.xyz
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: qUCQFvosamzk8NWdkalFmEMYinnt-_FnZZw6_9EdRVY
+      short-id: 6eb97c25
+  - name: 🇭🇰 香港-036
+    type: vless
+    server: hk1.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: download.smartone.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: xu63Tr7fadZPWJM7S4j_ddiZTMM3zM34orZ3ujT5Kgs
+      short-id: 4d0abc38f7bc
+  - name: 🇭🇰 香港-037
+    type: vless
+    server: hk2.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: download.smartone.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: IeVQ8hHd2PSNvVWtT9C9_-zbz8sEb6P32uJDc9zuFgg
+      short-id: 3111cd31b3
+  - name: 🇭🇰 香港-038
+    type: vless
+    server: hk3.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: hk4e-launcher-static.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: zV4Sja0iajpdzkR1iBMbI7RRWL2nlpgwGOtirQSG-zc
+      short-id: b81edf7fdee4
+  - name: 🇭🇰 香港-039
+    type: vless
+    server: hk4.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: hk4e-launcher-static.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: KhRbgahSFqlPKB6QNp9QYb4oXMy2SIgi440tm6iFZHA
+      short-id: ea6b43
+  - name: 🇭🇰 香港-040
+    type: vless
+    server: hk5.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.hsbc.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: HbjpGbCmp7lBysnS-twEYgGoriXACHZQObIpU9zJWVc
+      short-id: a273e9ee6ac0a466
+  - name: 🇸🇬 新加坡-001
+    type: anytls
+    server: asg.jueduibupao.top
+    port: 443
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: asg.jueduibupao.top
+    servername: asg.jueduibupao.top
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-002
+    type: anytls
+    server: asg2.jueduibupao.top
+    port: 7000
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: www.microsoft.com
+    servername: www.microsoft.com
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-003
+    type: anytls
+    server: asg3.jueduibupao.top
+    port: 7000
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: www.microsoft.com
+    servername: www.microsoft.com
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-004
+    type: hysteria2
+    server: 129.212.228.50
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-006
+    type: hysteria2
+    server: 143.198.207.28
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-008
+    type: hysteria2
+    server: 159.223.57.90
+    port: 30003
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-009
+    type: hysteria2
+    server: 159.65.12.51
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-010
+    type: hysteria2
+    server: 165.232.171.202
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-011
+    type: hysteria2
+    server: 1sg001.459292.xyz
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-015
+    type: hysteria2
+    server: 98527e9d.459292.xyz
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-020
+    type: hysteria2
+    server: ff79a76a.459292.xyz
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-021
+    type: hysteria2
+    server: sg03.459292.xyz
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-022
+    type: hysteria2
+    server: sg05.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-023
+    type: hysteria2
+    server: sg06.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-024
+    type: hysteria2
+    server: sg07.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: sg07.459921.xyz
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-025
+    type: hysteria2
+    server: sg11.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: sg11.459921.xyz
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-026
+    type: hysteria2
+    server: sg16.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-027
+    type: hysteria2
+    server: sg25.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇸🇬 新加坡-035
+    type: vless
+    server: aws-link30.liangxin1.xyz
+    port: 23568
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.hk
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: EjcM-ENrpWY8iIL82qJtQrZgRs4KlVqhdisqLAXonUY
+      short-id: 55d046dc
+  - name: 🇸🇬 新加坡-036
+    type: vless
+    server: aws-link31.liangxin1.xyz
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: wXayfckurSM2zWeis7OAL_QVGm9wBLr0WYp2zFtJFAE
+      short-id: c7487aeb
+  - name: 🇸🇬 新加坡-037
+    type: vless
+    server: aws-link7.liangxin1.xyz
+    port: 48574
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.lamer.com.sg
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: lmxSayN8tUg2Dag2MPXrdqZ2SQK9K3OjlaKk8wVCRnc
+      short-id: f8f18902
+  - name: 🇸🇬 新加坡-038
+    type: vless
+    server: aws-link8.liangxin1.xyz
+    port: 39645
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: x7VqpFP7_PrY4ebNw8hi8Ec5Tm5Upmt5JOdrN1M9VnQ
+      short-id: 2b3b0b93
+  - name: 🇸🇬 新加坡-039
+    type: vless
+    server: aws-link9.liangxin1.xyz
+    port: 23587
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: H66PLLf6HkZwHk4oFqisfTawIvw2cxkEwk8Ue8sHZgA
+      short-id: 19b580ae
+  - name: 🇸🇬 新加坡-040
+    type: vless
+    server: downloadcfpro.xn--ghq880n3na965a.com
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: sgp1.xn--ghq880n3na965a.com
+    network: ws
+    client-fingerprint: ios
+    skip-cert-verify: true
+    ws-opts:
+      path: /pq/sg1
+      headers:
+        Host: sgp1.xn--ghq880n3na965a.com
+  - name: 🇸🇬 新加坡-041
+    type: vless
+    server: pq.aws63.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: mnshlVo5tkzYbmEB9xrgmUHwYETnXLAjjlGAssqaDGI
+      short-id: 436299c6
+  - name: 🇸🇬 新加坡-042
+    type: vless
+    server: pq.aws64.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: xjWkdgeetCnB1-kHqwVnAaSUqg4qK9TFWQlamW8FSRI
+      short-id: e2e15173
+  - name: 🇸🇬 新加坡-043
+    type: vless
+    server: pq.aws65.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 9076EbD5vM8kATc_08QvDiqZF5KHTM_LaSrMOvcwfHw
+      short-id: 57b7989c
+  - name: 🇸🇬 新加坡-044
+    type: vless
+    server: pq.aws66.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: OmGeSOsHQMl3Rm6G3SzYjmZvgFYBF489vxfbBCNDWjw
+      short-id: 289c74e0
+  - name: 🇸🇬 新加坡-045
+    type: vless
+    server: pq.aws67.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: iusZvFfHH5OJ6sAPFF6e7Km9WP0nmWfjXXfhTQuSR24
+      short-id: 8b6e932c
+  - name: 🇸🇬 新加坡-046
+    type: vless
+    server: sg1.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: sg-hyp-api.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: vUhHTgZiXSho6Nv84w_JZW7Mo7XjJr0TsOBf19Dpols
+      short-id: 37c94ae25b69a93a
+  - name: 🇸🇬 新加坡-047
+    type: vless
+    server: sg2.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: sg-hyp-api.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: Oh-r_LCdfRhSzm9zQEv-0jMO57hebZJzOmSTTGveh2c
+      short-id: 5f2ca3da385c
+  - name: 🇸🇬 新加坡-048
+    type: vless
+    server: sg3.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.changiairport.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: jpn2pLj_p5lxGwycLht80v2qNeP7jHwh1Gv-nTU8zXY
+      short-id: ddcd71ec09e5893a
+  - name: 🇸🇬 新加坡-049
+    type: vless
+    server: sg4.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.changiairport.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: I2PQq5bidT2RjVCJt2r-eSVpLNY61quSYgS2dseomF8
+      short-id: 1dd8558159ecd0
+  - name: 🇯🇵 日本-001
+    type: anytls
+    server: ajp1.jueduibupao.top
+    port: 7000
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: www.microsoft.com
+    servername: www.microsoft.com
+    skip-cert-verify: true
+  - name: 🇯🇵 日本-002
+    type: anytls
+    server: ajp2.jueduibupao.top
+    port: 7000
+    udp: true
+    password: a1b2dd91-b96d-4fd2-953d-d401079e7c9c
+    sni: www.microsoft.com
+    servername: www.microsoft.com
+    skip-cert-verify: true
+  - name: 🇯🇵 日本-003
+    type: hysteria2
+    server: 1jp001.459292.xyz
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇯🇵 日本-008
+    type: hysteria2
+    server: jp06.459292.xyz
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇯🇵 日本-022
+    type: vless
+    server: aws-link13.liangxin1.xyz
+    port: 36574
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.apple.com.cn
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: sDG-KQk1BF7V83-xnmrWDouXxpPd_ZSxKcHrJJzbols
+      short-id: 32a3650d
+  - name: 🇯🇵 日本-023
+    type: vless
+    server: aws-link14.liangxin1.xyz
+    port: 25485
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: www.apple.com.cn
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: VOFSjjWT0wIH3Q0ntyEZd8WwksrIAb5gPt_3PBnEASg
+      short-id: 9c5b8c53
+  - name: 🇯🇵 日本-024
+    type: vless
+    server: aws-link19.liangxin1.xyz
+    port: 8654
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o
+      short-id: '6314e825'
+  - name: 🇯🇵 日本-025
+    type: vless
+    server: aws-link20.liangxin1.xyz
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o
+      short-id: '6314e825'
+  - name: 🇯🇵 日本-026
+    type: vless
+    server: aws-link23.liangxin1.xyz
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: dLmUAqcdy4Z7iucApd9zjOhkXTjl-xt_eHumShIYW0c
+      short-id: ba826a54
+  - name: 🇯🇵 日本-027
+    type: vless
+    server: cfyes.lxy1015.top
+    port: 443
+    udp: true
+    uuid: 057fa653-0045-4212-8823-4fe26ba97e40
+    tls: true
+    servername: jp-lx.777076.xyz
+    network: ws
+    client-fingerprint: safari
+    skip-cert-verify: true
+    ws-opts:
+      path: /liangxin/jp1
+      headers:
+        Host: jp-lx.777076.xyz
+  - name: 🇯🇵 日本-029
+    type: vless
+    server: jp2.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.capcom.co.jp
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 3yorIs_psiYbIeESwMdne5mPe2JVzeNOpDa2IJxQ-Es
+      short-id: 21fa8a1ebf
+  - name: 🇯🇵 日本-031
+    type: vless
+    server: jp4.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.bandainamcoent.co.jp
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: qkSw1mYeebLzLGFAxnSu0CuNaSQXdhR-doksZoqEniA
+      short-id: f75fbd5b
+  - name: 🇯🇵 日本-032
+    type: vless
+    server: pq.aws48.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: ybBxu1pW3O9Me954LCDfXgHW6lIYepAbnla82yaZ5HE
+      short-id: 6a1faecb
+  - name: 🇯🇵 日本-033
+    type: vless
+    server: pq.aws49.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: support.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: f1131S_7UjEFSAbjkkPrSp4wdjZwG5otAmHd9Naxcj4
+      short-id: 701fcb1f
+  - name: 🇯🇵 日本-034
+    type: vless
+    server: pq.aws50.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: pR8CV43xvSgvzSXPVLCVomjw-yZvNyqU32kietO2pEc
+      short-id: a6115a2c
+  - name: 🇯🇵 日本-035
+    type: vless
+    server: pq.aws51.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: cdn-dynmedia-1.microsoft.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: FrLhPuCVfzdM5rppzxHXQ5BZSGf1YHrXgo-cCtecGSo
+      short-id: f3b38af2
+  - name: 🇯🇵 日本-036
+    type: vless
+    server: pq.aws52.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: cdn-dynmedia-1.microsoft.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: safari
+    skip-cert-verify: true
+    reality-opts:
+      public-key: FrLhPuCVfzdM5rppzxHXQ5BZSGf1YHrXgo-cCtecGSo
+      short-id: f3b38af2
+  - name: 🇯🇵 日本-037
+    type: vless
+    server: pq.aws53.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: pR8CV43xvSgvzSXPVLCVomjw-yZvNyqU32kietO2pEc
+      short-id: a6115a2c
+  - name: 🇯🇵 日本-038
+    type: vless
+    server: pq.aws54.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: ePEdL0MQGHT0BGkhSprooNXTYHgp_mdaxEaOkGTKO3k
+      short-id: 195c371d
+  - name: 🇯🇵 日本-039
+    type: vless
+    server: pq.aws55.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: Zzn7SxtTRMANwRwOvn87ZpNQ8zjjzcKOznE_sG_7UQU
+      short-id: 6b584a0d
+  - name: 🇯🇵 日本-040
+    type: vless
+    server: pq.aws56.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: scnmyqQqGfHXAG9Ihe-bzs1xvqwQlMhCc87zJdIzPTs
+      short-id: 2edcfbb7
+  - name: 🇯🇵 日本-041
+    type: vless
+    server: pq.aws57.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: KeIvEyXB-ftboKdIoaSDyUKJPQpmcZiVaqY2JndkX08
+      short-id: 55fbcc37
+  - name: 🇯🇵 日本-042
+    type: vless
+    server: unamecf.xn--ghqu5fm27b67w.com
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: ujp1.xn--ghqu5fm27b67w.com
+    network: ws
+    client-fingerprint: ios
+    skip-cert-verify: true
+    ws-opts:
+      path: /pq/jp1
+      headers:
+        Host: ujp1.xn--ghqu5fm27b67w.com
+  - name: 🇯🇵 日本-043
+    type: vless
+    server: unamecf2.xn--ghqu5fm27b67w.com
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: ujp2.xn--ghqu5fm27b67w.com
+    network: ws
+    client-fingerprint: safari
+    skip-cert-verify: true
+    ws-opts:
+      path: /pq/jp2
+      headers:
+        Host: ujp2.xn--ghqu5fm27b67w.com
+  - name: 🇹🇼 台湾-001
+    type: hysteria2
+    server: 5gzdx.344211.cc
+    port: 30001
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇹🇼 台湾-003
+    type: hysteria2
+    server: tw07.344211.cc
+    port: 8443
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: tw07.344211.cc
+    skip-cert-verify: true
+  - name: 🇹🇼 台湾-004
+    type: hysteria2
+    server: tw11.344211.cc
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇹🇼 台湾-005
+    type: hysteria2
+    server: tw3.344211.cc
+    port: 30001
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇹🇼 台湾-007
+    type: hysteria2
+    server: tw4.459921.xyz
+    port: 30001
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇹🇼 台湾-008
+    type: hysteria2
+    server: tw40.459921.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇹🇼 台湾-010
+    type: vless
+    server: pq-hinet.tw1.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: static-snowbreak.amazingseasun.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: kp6ml6xwSt4hTDEKj6U0FR0l-kDy2iUiILiT0XfFwjA
+      short-id: 3662ca42
+  - name: 🇹🇼 台湾-011
+    type: vless
+    server: pq-hinet.tw2.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: static-snowbreak.amazingseasun.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: Z-S-J9zDn7pXU7haa9_BeIny-Yp5qtS0R_MnHSgsoGA
+      short-id: 0c9347ba
+  - name: 🇹🇼 台湾-012
+    type: vless
+    server: pq-hinet.tw3.yydjc.top
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: static-snowbreak.amazingseasun.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: eECwNaUgTEzRbyaeSaYpZGNTuuf5xZL2UVeGhDNWxTE
+      short-id: c85e4b9b
+  - name: 🇹🇼 台湾-014
+    type: vless
+    server: tw1.459292.xyz
+    port: 8443
+    udp: true
+    uuid: c3930c33-a482-428e-9ed3-51bb14d61575
+    tls: true
+    servername: www.python.org
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: firefox
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 2a0ONLRiBeHJdr9qCruq5tPVf8_3c4fmZsg7YQorFSE
+      short-id: 04d59340
+  - name: 🇹🇼 台湾-017
+    type: vless
+    server: tw3.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: dlcdnets.asus.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: JE82iOR_U_H7ffxJ5yfoxXeRkMlE-aVu1wxR7n6jrVM
+      short-id: '473277e2'
+  - name: 🇹🇼 台湾-018
+    type: vless
+    server: tw4.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: dlcdnets.asus.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: IqsN_cPeCP6oEXtYQMMWBiUim-r9lxq7YGj_mE3992g
+      short-id: e6d59aff03e5b0
+  - name: 🇰🇷 韩国-004
+    type: vless
+    server: kr1.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.coway.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: aVGSSemhxqqDg75lUDBxCNZZXfuBb4QrU8yZYnJD6nk
+      short-id: f554f56d31
+  - name: 🇰🇷 韩国-005
+    type: vless
+    server: kr2.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.coway.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 6pZxjabeHoyJlsc2cP3Q5YK7G0bIOQwzWFyiarbUQXc
+      short-id: c8af1462debbc1
+  - name: 🇺🇸 美国-001
+    type: hysteria2
+    server: 143.198.62.9
+    port: 20001
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇺🇸 美国-012
+    type: hysteria2
+    server: us02.459292.xyz
+    port: 8080
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇺🇸 美国-013
+    type: hysteria2
+    server: us03.459292.xyz
+    port: 20000
+    udp: true
+    password: c3930c33-a482-428e-9ed3-51bb14d61575
+    sni: localhost
+    skip-cert-verify: true
+  - name: 🇺🇸 美国-016
+    type: vless
+    server: 134.195.101.122
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: www.mi.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: ptYLYuVba16lu-OtadiE8Wd-cGHHVZh0XkxVUqrhmDE
+      short-id: 2546d239
+  - name: 🇺🇸 美国-017
+    type: vless
+    server: 134.195.101.129
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: XpaYw0-hwSPxgV8K-WUbEaxbAwxjYVpDkDGOMONwUiA
+      short-id: 79f44f5c
+  - name: 🇺🇸 美国-018
+    type: vless
+    server: 134.195.101.137
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: updates.cdn-apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: AzQlCUikY30iQK5pgK2nW_AiYJkvi2Lm5rDjWGHvzUo
+      short-id: 182dc224
+  - name: 🇺🇸 美国-019
+    type: vless
+    server: 134.195.101.178
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: -Cc9Wduo_L3TI70LPHFamFOaQer2Lzzux-vwAVDn5ns
+      short-id: f0dc50e8
+  - name: 🇺🇸 美国-020
+    type: vless
+    server: 134.195.101.182
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: GRpUsIrhrxRKshbSbWFs1YmTyWzhTQXjAyjpRIFo1zs
+      short-id: beadc711
+  - name: 🇺🇸 美国-021
+    type: vless
+    server: 134.195.101.187
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: www.mi.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: CQqGVFQ65FCLJsqx2xb0RkfjZ6veJNaCsqazSYVvfgQ
+      short-id: d574526d
+  - name: 🇺🇸 美国-022
+    type: vless
+    server: 134.195.101.207
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: iosapps.itunes.apple.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 20zgmuoZYL5ngyWwzwJSaNpfaRAOhX2UdND6RVVswm0
+      short-id: 71c05500
+  - name: 🇺🇸 美国-023
+    type: vless
+    server: 203.10.96.138
+    port: 443
+    udp: true
+    uuid: b08f07f3-16b6-4ff5-a219-ce283cd5b745
+    tls: true
+    servername: cdn-dynmedia-1.microsoft.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: ios
+    skip-cert-verify: true
+    reality-opts:
+      public-key: VFG2L-3i30fQZg3wd0DF6dEGdaT27S-PKpuYu7Hp8xU
+      short-id: fd26d49a
+  - name: 🇺🇸 美国-024
+    type: vless
+    server: us1.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: 0_UOGGSOr0NZqCA-nQo-Ct0MjQPfghmBL_sh6XU5pW8
+      short-id: 8e218ca02a
+  - name: 🇺🇸 美国-025
+    type: vless
+    server: us2.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: w5egR8fKNXrEJns2AfwStSzRQ9yHY_invtW7tnqm8Dk
+      short-id: 297842ea18bf
+  - name: 🇺🇸 美国-026
+    type: vless
+    server: us3.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: dvXaj6cjjCxv1btRo7vHk93VR0BCQTF_xQClCjVZ1mM
+      short-id: 5cfd1c
+  - name: 🇺🇸 美国-027
+    type: vless
+    server: us4.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: download-porter.hoyoverse.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: zyuUbkfNG5nWHUVIVjGCCYIs85gKcxho6vmHKXVMIWA
+      short-id: 2ad0cb03eb3fa5
+  - name: 🇳🇱 荷兰-001
+    type: vless
+    server: nl1.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.philips.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: AFQAIB5u9Uu6nf9fkP1BdcSHivSuUv97l4FH-LoFYgw
+      short-id: 92dca6
+  - name: 🇳🇿 New Zealand-001
+    type: vless
+    server: uk1.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.bp.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: _dsOu_vxEU7pY3sIeGJxIpR0Ac2KoqIyBor2Bx0CwGA
+      short-id: d923
+  - name: 🇳🇿 New Zealand-002
+    type: vless
+    server: uk2.miyazono-kaori.com
+    port: 443
+    udp: true
+    uuid: fc81f1e3-fd26-49d3-a6a4-ac2c837376d8
+    tls: true
+    servername: www.bp.com
+    flow: xtls-rprx-vision
+    network: tcp
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    reality-opts:
+      public-key: QdYs12kmf0mAXNOEPgMpLN5dbZUlgvRK2zCqynOmqBk
+      short-id: '20'
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 📲 Telegram
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 📺 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🇬 谷歌服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🐦 Twitter
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 📘 Facebook
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 📸 Instagram
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🎵 TikTok
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🎥 Netflix
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🤖 OpenAI
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港自动
+      - 🇸🇬 新加坡自动
+      - 🇯🇵 日本自动
+      - 🇹🇼 台湾自动
+      - 🇺🇸 美国自动
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+      - 🇰🇷 韩国-004
+      - 🇰🇷 韩国-005
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+      - 🇳🇱 荷兰-001
+      - 🇳🇿 New Zealand-001
+      - 🇳🇿 New Zealand-002
+  - name: 🇭🇰 香港自动
+    type: url-test
+    proxies:
+      - 🇭🇰 香港-001
+      - 🇭🇰 香港-003
+      - 🇭🇰 香港-004
+      - 🇭🇰 香港-005
+      - 🇭🇰 香港-031
+      - 🇭🇰 香港-032
+      - 🇭🇰 香港-033
+      - 🇭🇰 香港-034
+      - 🇭🇰 香港-035
+      - 🇭🇰 香港-036
+      - 🇭🇰 香港-037
+      - 🇭🇰 香港-038
+      - 🇭🇰 香港-039
+      - 🇭🇰 香港-040
+    url: http://www.google.com/generate_204
+    interval: 60
+    lazy: true
+    tolerance: 50
+  - name: 🇸🇬 新加坡自动
+    type: url-test
+    proxies:
+      - 🇸🇬 新加坡-001
+      - 🇸🇬 新加坡-002
+      - 🇸🇬 新加坡-003
+      - 🇸🇬 新加坡-004
+      - 🇸🇬 新加坡-006
+      - 🇸🇬 新加坡-008
+      - 🇸🇬 新加坡-009
+      - 🇸🇬 新加坡-010
+      - 🇸🇬 新加坡-011
+      - 🇸🇬 新加坡-015
+      - 🇸🇬 新加坡-020
+      - 🇸🇬 新加坡-021
+      - 🇸🇬 新加坡-022
+      - 🇸🇬 新加坡-023
+      - 🇸🇬 新加坡-024
+      - 🇸🇬 新加坡-025
+      - 🇸🇬 新加坡-026
+      - 🇸🇬 新加坡-027
+      - 🇸🇬 新加坡-035
+      - 🇸🇬 新加坡-036
+      - 🇸🇬 新加坡-037
+      - 🇸🇬 新加坡-038
+      - 🇸🇬 新加坡-039
+      - 🇸🇬 新加坡-040
+      - 🇸🇬 新加坡-041
+      - 🇸🇬 新加坡-042
+      - 🇸🇬 新加坡-043
+      - 🇸🇬 新加坡-044
+      - 🇸🇬 新加坡-045
+      - 🇸🇬 新加坡-046
+      - 🇸🇬 新加坡-047
+      - 🇸🇬 新加坡-048
+      - 🇸🇬 新加坡-049
+    url: http://www.google.com/generate_204
+    interval: 60
+    lazy: true
+    tolerance: 50
+  - name: 🇯🇵 日本自动
+    type: url-test
+    proxies:
+      - 🇯🇵 日本-001
+      - 🇯🇵 日本-002
+      - 🇯🇵 日本-003
+      - 🇯🇵 日本-008
+      - 🇯🇵 日本-022
+      - 🇯🇵 日本-023
+      - 🇯🇵 日本-024
+      - 🇯🇵 日本-025
+      - 🇯🇵 日本-026
+      - 🇯🇵 日本-027
+      - 🇯🇵 日本-029
+      - 🇯🇵 日本-031
+      - 🇯🇵 日本-032
+      - 🇯🇵 日本-033
+      - 🇯🇵 日本-034
+      - 🇯🇵 日本-035
+      - 🇯🇵 日本-036
+      - 🇯🇵 日本-037
+      - 🇯🇵 日本-038
+      - 🇯🇵 日本-039
+      - 🇯🇵 日本-040
+      - 🇯🇵 日本-041
+      - 🇯🇵 日本-042
+      - 🇯🇵 日本-043
+    url: http://www.google.com/generate_204
+    interval: 60
+    lazy: true
+    tolerance: 50
+  - name: 🇹🇼 台湾自动
+    type: url-test
+    proxies:
+      - 🇹🇼 台湾-001
+      - 🇹🇼 台湾-003
+      - 🇹🇼 台湾-004
+      - 🇹🇼 台湾-005
+      - 🇹🇼 台湾-007
+      - 🇹🇼 台湾-008
+      - 🇹🇼 台湾-010
+      - 🇹🇼 台湾-011
+      - 🇹🇼 台湾-012
+      - 🇹🇼 台湾-014
+      - 🇹🇼 台湾-017
+      - 🇹🇼 台湾-018
+    url: http://www.google.com/generate_204
+    interval: 60
+    lazy: true
+    tolerance: 50
+  - name: 🇺🇸 美国自动
+    type: url-test
+    proxies:
+      - 🇺🇸 美国-001
+      - 🇺🇸 美国-012
+      - 🇺🇸 美国-013
+      - 🇺🇸 美国-016
+      - 🇺🇸 美国-017
+      - 🇺🇸 美国-018
+      - 🇺🇸 美国-019
+      - 🇺🇸 美国-020
+      - 🇺🇸 美国-021
+      - 🇺🇸 美国-022
+      - 🇺🇸 美国-023
+      - 🇺🇸 美国-024
+      - 🇺🇸 美国-025
+      - 🇺🇸 美国-026
+      - 🇺🇸 美国-027
+    url: http://www.google.com/generate_204
+    interval: 60
+    lazy: true
+    tolerance: 50
+rules:
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,pglstatp-toutiao.com,🛑 广告拦截
+  - DOMAIN,pangolin.snssdk.com,🛑 广告拦截
+  - DOMAIN,ad.toutiao.com,🛑 广告拦截
+  - DOMAIN,toblog.ctobsnssdk.com,🛑 广告拦截
+  - DOMAIN,gssdk.zjbyte.com,🛑 广告拦截
+  - DOMAIN,mon.zijieapi.com,🛑 广告拦截
+  - DOMAIN-REGEX,^ads.*\.bytedance\.com$,🛑 广告拦截
+  - DOMAIN-REGEX,^stat.*\.bytedance\.com$,🛑 广告拦截
+  - DOMAIN,p.pangle.io,🛑 广告拦截
+  - DOMAIN,is.snssdk.com,🛑 广告拦截
+  - DOMAIN,log.snssdk.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,gdt.qq.com,🛑 广告拦截
+  - DOMAIN,sdk.e.qq.com,🛑 广告拦截
+  - DOMAIN,pgdt.gtimg.cn,🛑 广告拦截
+  - DOMAIN,adsmind.gdtimg.com,🛑 广告拦截
+  - DOMAIN,vlive.qq.com,🛑 广告拦截
+  - DOMAIN,btrace.qq.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,e.kuaishou.com,🛑 广告拦截
+  - DOMAIN,adukwai.com,🛑 广告拦截
+  - DOMAIN,open.e.kuaishou.com,🛑 广告拦截
+  - DOMAIN,yx.e.kuaishou.com,🛑 广告拦截
+  - DOMAIN,mobads.baidu.com,🛑 广告拦截
+  - DOMAIN,mobads-logs.baidu.com,🛑 广告拦截
+  - DOMAIN,wn.pos.baidu.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,bce.baidu.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,sigmob.cn,🛑 广告拦截
+  - DOMAIN-SUFFIX,mintegral.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,mintegral.net,🛑 广告拦截
+  - DOMAIN-KEYWORD,ad.iqiyi.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,cupid.iqiyi.com,🛑 广告拦截
+  - DOMAIN-KEYWORD,atm.youku.com,🛑 广告拦截
+  - DOMAIN,ad.youku.com,🛑 广告拦截
+  - DOMAIN,ad.mgtv.com,🛑 广告拦截
+  - DOMAIN,da.mgtv.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
+  - DOMAIN-SUFFIX,googlesyndication.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,googleadservices.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,adnxs.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,cnzz.com,🛑 广告拦截
+  - DST-PORT,123,🎯 全球直连
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 广告拦截
+  - RULE-SET,AWAvenueAds,🛑 广告拦截
+  - RULE-SET,Google,🇬 谷歌服务
+  - RULE-SET,Twitter,🐦 Twitter
+  - RULE-SET,Facebook,📘 Facebook
+  - RULE-SET,Instagram,📸 Instagram
+  - RULE-SET,TikTok,🎵 TikTok
+  - RULE-SET,Telegram,📲 Telegram
+  - RULE-SET,YouTube,📺 YouTube
+  - RULE-SET,Netflix,🎥 Netflix
+  - RULE-SET,OpenAI,🤖 OpenAI
+  - RULE-SET,Claude,🤖 OpenAI
+  - RULE-SET,Gemini,🤖 OpenAI
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,ProxyMedia,🌍 国外媒体
+  - RULE-SET,ProxyClassical,🚀 节点选择
+  - RULE-SET,ChinaClassical,🎯 全球直连
+  - RULE-SET,ChinaCIDR,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
+rule-providers:
+  BanAD:
+    type: http
+    behavior: domain
+    interval: 86400
+    path: BanAD.yaml
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+  AWAvenueAds:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    path: AWAvenueAds.yaml
+    url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.yaml
+  Google:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Google.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml
+  Twitter:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Twitter.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Twitter/Twitter.yaml
+  Facebook:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Facebook.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Facebook/Facebook.yaml
+  Instagram:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Instagram.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Instagram/Instagram.yaml
+  TikTok:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: TikTok.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml
+  Telegram:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Telegram.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml
+  YouTube:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: YouTube.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml
+  Netflix:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Netflix.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml
+  OpenAI:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: OpenAI.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
+  Claude:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Claude.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml
+  Gemini:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Gemini.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml
+  Apple:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Apple.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml
+  Microsoft:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: Microsoft.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    interval: 86400
+    path: LocalAreaNetwork.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml
+  ProxyMedia:
+    type: http
+    behavior: classical
+    interval: 259200
+    path: ProxyMedia.yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+  ProxyClassical:
+    type: http
+    behavior: domain
+    interval: 86400
+    path: ProxyClassical.yaml
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+  ChinaClassical:
+    type: http
+    behavior: domain
+    interval: 86400
+    path: ChinaClassical.yaml
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+  ChinaCIDR:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    path: CNCIDR.yaml
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
