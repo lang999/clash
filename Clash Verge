@@ -1,0 +1,639 @@
+# 节点数: 46
+mixed-port: 7890
+allow-lan: false
+bind-address: "*"
+mode: global
+log-level: info
+ipv6: true
+find-process-mode: strict
+unified-delay: true
+tcp-concurrent: true
+proxies:
+  - name: "🇺🇸美国专线-01 专线优化"
+    type: vless
+    server: us5-r.link-t7.com
+    port: 10242
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇺🇸美国专线-02 专线优化"
+    type: vless
+    server: us5-r.link-t7.com
+    port: 10242
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇺🇸美国专线-03 专线优化"
+    type: vless
+    server: us2-r.link-t7.com
+    port: 10239
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇺🇸美国专线-04 专线优化"
+    type: vless
+    server: us2-r.link-t7.com
+    port: 10239
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇺🇸美国中转-01 中转线路"
+    type: vless
+    server: "180.178.60.254"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇺🇸美国中转-02 中转线路"
+    type: vless
+    server: "180.178.60.254"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇺🇸美国中转-03 中转线路"
+    type: vless
+    server: "180.178.60.254"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇺🇸美国中转-04 中转线路"
+    type: vless
+    server: "180.178.60.254"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇭🇰香港专线-01 专线优化"
+    type: vless
+    server: hk5-r.link-t7.com
+    port: 10130
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇭🇰香港专线-02 专线优化"
+    type: vless
+    server: hk5-r.link-t7.com
+    port: 10130
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇭🇰香港专线-03 专线优化"
+    type: vless
+    server: hk6-r.link-t7.com
+    port: 10136
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇭🇰香港专线-04 专线优化"
+    type: vless
+    server: hk6-r.link-t7.com
+    port: 10136
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: movie
+  - name: "🇭🇰香港中转-01 中转线路"
+    type: vless
+    server: hkt-2.ddns-go.de
+    port: 20230
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: images.apple.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
+      short-id: "492ef29645ad"
+  - name: "🇭🇰香港中转-02 中转线路"
+    type: vless
+    server: hkt-2.ddns-go.de
+    port: 20230
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: images.apple.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
+      short-id: "492ef29645ad"
+  - name: "🇭🇰香港中转-03 中转线路"
+    type: vless
+    server: hkt-2.ddns-go.de
+    port: 20230
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: images.apple.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
+      short-id: "492ef29645ad"
+  - name: "🇭🇰香港中转-04 中转线路"
+    type: vless
+    server: hkt-2.ddns-go.de
+    port: 20230
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: images.apple.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
+      short-id: "492ef29645ad"
+  - name: "🇨🇳台湾中转-01 中转线路"
+    type: vless
+    server: "220.130.75.249"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇨🇳台湾中转-02 中转线路"
+    type: vless
+    server: "220.130.75.249"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇨🇳台湾中转-03 中转线路"
+    type: vless
+    server: "220.130.75.249"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇨🇳台湾中转-04 中转线路"
+    type: vless
+    server: "220.130.75.249"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "🇯🇵日本专线-01 专线优化"
+    type: vless
+    server: jp2-r.link-t7.com
+    port: 10032
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇯🇵日本专线-02 专线优化"
+    type: vless
+    server: jp2-r.link-t7.com
+    port: 10032
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇯🇵日本专线-03 专线优化"
+    type: vless
+    server: jp4-r.link-t7.com
+    port: 10034
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇯🇵日本专线-04 专线优化"
+    type: vless
+    server: jp4-r.link-t7.com
+    port: 10034
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇯🇵日本中转-01 中转线路"
+    type: vless
+    server: www.visa.cn
+    port: 8443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: jp.520785.xyz
+    client-fingerprint: edge
+    ws-opts:
+      path: /static/media/video-chunk.f4v
+      headers:
+        Host: jp.520785.xyz
+  - name: "🇯🇵日本中转-02 中转线路"
+    type: vless
+    server: www.visa.cn
+    port: 8443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: jp.520785.xyz
+    client-fingerprint: edge
+    ws-opts:
+      path: /static/media/video-chunk.f4v
+      headers:
+        Host: jp.520785.xyz
+  - name: "🇯🇵日本中转-03 中转线路"
+    type: vless
+    server: www.visa.cn
+    port: 8443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: jp.520785.xyz
+    client-fingerprint: edge
+    ws-opts:
+      path: /static/media/video-chunk.f4v
+      headers:
+        Host: jp.520785.xyz
+  - name: "🇯🇵日本中转-04 中转线路"
+    type: vless
+    server: www.visa.cn
+    port: 8443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: jp.520785.xyz
+    client-fingerprint: edge
+    ws-opts:
+      path: /static/media/video-chunk.f4v
+      headers:
+        Host: jp.520785.xyz
+  - name: "🇰🇷韩国专线-01 专线优化"
+    type: vless
+    server: kr1-r.link-t7.com
+    port: 10046
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇰🇷韩国专线-02 专线优化"
+    type: vless
+    server: kr2-r.link-t7.com
+    port: 10047
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇰🇷韩国专线-03 专线优化"
+    type: vless
+    server: kr3-r.link-t7.com
+    port: 10048
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇰🇷韩国专线-04 专线优化"
+    type: vless
+    server: kr4-r.link-t7.com
+    port: 10049
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇰🇷韩国专线-05 专线优化"
+    type: vless
+    server: kr5-r.link-t7.com
+    port: 10050
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇸🇬新加坡专线-01 专线优化"
+    type: vless
+    server: sg1-r.link-t7.com
+    port: 10036
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: s0.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇸🇬新加坡专线-02 专线优化"
+    type: vless
+    server: sg4-r.link-t7.com
+    port: 10039
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: d1.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "🇸🇬新加坡专线-03 专线优化"
+    type: vless
+    server: sg4-r.link-t7.com
+    port: 10039
+    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
+    network: grpc
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: d1.awsstatic.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: "686c0ef0"
+    grpc-opts:
+      grpc-service-name: update
+  - name: "泰国直连-01 直连线路"
+    type: vless
+    server: www.visa.cn
+    port: 443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: tl.520783.xyz
+    client-fingerprint: edge
+    ws-opts:
+      path: /assets/dist/app-update-payload.dat
+      headers:
+        Host: tl.520783.xyz
+  - name: "泰国直连-02 直连线路"
+    type: vless
+    server: www.visa.cn
+    port: 443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: tl.520783.xyz
+    client-fingerprint: edge
+    ws-opts:
+      path: /assets/dist/app-update-payload.dat
+      headers:
+        Host: tl.520783.xyz
+  - name: "印度直连-01 直连线路"
+    type: vless
+    server: cfd.url0.top
+    port: 443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: in.520782.xyz
+    client-fingerprint: edge
+    skip-cert-verify: true
+    ws-opts:
+      path: /cdn/packages/runtime-core.tar.gz
+      headers:
+        Host: in.520782.xyz
+  - name: "印度直连-02 直连线路"
+    type: vless
+    server: cfd.url0.top
+    port: 443
+    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
+    network: ws
+    udp: true
+    packet-encoding: xudp
+    tls: true
+    servername: in.520782.xyz
+    client-fingerprint: edge
+    skip-cert-verify: true
+    ws-opts:
+      path: /cdn/packages/runtime-core.tar.gz
+      headers:
+        Host: in.520782.xyz
+  - name: "香港直连免费-01"
+    type: vless
+    server: "207.174.133.214"
+    port: 10000
+    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "香港直连免费-02"
+    type: vless
+    server: "207.174.133.214"
+    port: 10000
+    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "香港直连免费-03"
+    type: vless
+    server: "207.174.133.214"
+    port: 10000
+    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "香港直连免费-04"
+    type: vless
+    server: "207.174.133.214"
+    port: 10000
+    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "香港直连免费-05"
+    type: vless
+    server: "207.174.133.214"
+    port: 10000
+    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
+  - name: "香港直连免费-06"
+    type: vless
+    server: "207.174.133.214"
+    port: 10000
+    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+    network: tcp
+    udp: true
+    packet-encoding: xudp
+    tls: false
