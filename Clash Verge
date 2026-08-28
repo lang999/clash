@@ -1,639 +1,1848 @@
-# 节点数: 46
-mixed-port: 7890
-allow-lan: false
-bind-address: "*"
-mode: global
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
 log-level: info
-ipv6: true
-find-process-mode: strict
-unified-delay: true
-tcp-concurrent: true
+external-controller: 127.0.0.1:9090
 proxies:
-  - name: "🇺🇸美国专线-01 专线优化"
-    type: vless
-    server: us5-r.link-t7.com
-    port: 10242
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇺🇸美国专线-02 专线优化"
-    type: vless
-    server: us5-r.link-t7.com
-    port: 10242
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇺🇸美国专线-03 专线优化"
-    type: vless
-    server: us2-r.link-t7.com
-    port: 10239
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇺🇸美国专线-04 专线优化"
-    type: vless
-    server: us2-r.link-t7.com
-    port: 10239
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇺🇸美国中转-01 中转线路"
-    type: vless
-    server: "180.178.60.254"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇺🇸美国中转-02 中转线路"
-    type: vless
-    server: "180.178.60.254"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇺🇸美国中转-03 中转线路"
-    type: vless
-    server: "180.178.60.254"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇺🇸美国中转-04 中转线路"
-    type: vless
-    server: "180.178.60.254"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇭🇰香港专线-01 专线优化"
-    type: vless
-    server: hk5-r.link-t7.com
-    port: 10130
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇭🇰香港专线-02 专线优化"
-    type: vless
-    server: hk5-r.link-t7.com
-    port: 10130
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇭🇰香港专线-03 专线优化"
-    type: vless
-    server: hk6-r.link-t7.com
-    port: 10136
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇭🇰香港专线-04 专线优化"
-    type: vless
-    server: hk6-r.link-t7.com
-    port: 10136
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: movie
-  - name: "🇭🇰香港中转-01 中转线路"
-    type: vless
-    server: hkt-2.ddns-go.de
-    port: 20230
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: images.apple.com
-    client-fingerprint: ios
-    reality-opts:
-      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
-      short-id: "492ef29645ad"
-  - name: "🇭🇰香港中转-02 中转线路"
-    type: vless
-    server: hkt-2.ddns-go.de
-    port: 20230
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: images.apple.com
-    client-fingerprint: ios
-    reality-opts:
-      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
-      short-id: "492ef29645ad"
-  - name: "🇭🇰香港中转-03 中转线路"
-    type: vless
-    server: hkt-2.ddns-go.de
-    port: 20230
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: images.apple.com
-    client-fingerprint: ios
-    reality-opts:
-      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
-      short-id: "492ef29645ad"
-  - name: "🇭🇰香港中转-04 中转线路"
-    type: vless
-    server: hkt-2.ddns-go.de
-    port: 20230
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: images.apple.com
-    client-fingerprint: ios
-    reality-opts:
-      public-key: iNyp_Ut4iPNdSgudMo8-iUr0b8F-1vtOVWJC9xB4T1o
-      short-id: "492ef29645ad"
-  - name: "🇨🇳台湾中转-01 中转线路"
-    type: vless
-    server: "220.130.75.249"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇨🇳台湾中转-02 中转线路"
-    type: vless
-    server: "220.130.75.249"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇨🇳台湾中转-03 中转线路"
-    type: vless
-    server: "220.130.75.249"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇨🇳台湾中转-04 中转线路"
-    type: vless
-    server: "220.130.75.249"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "🇯🇵日本专线-01 专线优化"
-    type: vless
-    server: jp2-r.link-t7.com
-    port: 10032
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇯🇵日本专线-02 专线优化"
-    type: vless
-    server: jp2-r.link-t7.com
-    port: 10032
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇯🇵日本专线-03 专线优化"
-    type: vless
-    server: jp4-r.link-t7.com
-    port: 10034
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇯🇵日本专线-04 专线优化"
-    type: vless
-    server: jp4-r.link-t7.com
-    port: 10034
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇯🇵日本中转-01 中转线路"
-    type: vless
-    server: www.visa.cn
-    port: 8443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: jp.520785.xyz
-    client-fingerprint: edge
-    ws-opts:
-      path: /static/media/video-chunk.f4v
-      headers:
-        Host: jp.520785.xyz
-  - name: "🇯🇵日本中转-02 中转线路"
-    type: vless
-    server: www.visa.cn
-    port: 8443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: jp.520785.xyz
-    client-fingerprint: edge
-    ws-opts:
-      path: /static/media/video-chunk.f4v
-      headers:
-        Host: jp.520785.xyz
-  - name: "🇯🇵日本中转-03 中转线路"
-    type: vless
-    server: www.visa.cn
-    port: 8443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: jp.520785.xyz
-    client-fingerprint: edge
-    ws-opts:
-      path: /static/media/video-chunk.f4v
-      headers:
-        Host: jp.520785.xyz
-  - name: "🇯🇵日本中转-04 中转线路"
-    type: vless
-    server: www.visa.cn
-    port: 8443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: jp.520785.xyz
-    client-fingerprint: edge
-    ws-opts:
-      path: /static/media/video-chunk.f4v
-      headers:
-        Host: jp.520785.xyz
-  - name: "🇰🇷韩国专线-01 专线优化"
-    type: vless
-    server: kr1-r.link-t7.com
-    port: 10046
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇰🇷韩国专线-02 专线优化"
-    type: vless
-    server: kr2-r.link-t7.com
-    port: 10047
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇰🇷韩国专线-03 专线优化"
-    type: vless
-    server: kr3-r.link-t7.com
-    port: 10048
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇰🇷韩国专线-04 专线优化"
-    type: vless
-    server: kr4-r.link-t7.com
-    port: 10049
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇰🇷韩国专线-05 专线优化"
-    type: vless
-    server: kr5-r.link-t7.com
-    port: 10050
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇸🇬新加坡专线-01 专线优化"
-    type: vless
-    server: sg1-r.link-t7.com
-    port: 10036
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: s0.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇸🇬新加坡专线-02 专线优化"
-    type: vless
-    server: sg4-r.link-t7.com
-    port: 10039
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: d1.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "🇸🇬新加坡专线-03 专线优化"
-    type: vless
-    server: sg4-r.link-t7.com
-    port: 10039
-    uuid: "4B91086B-2E7C-4977-9952-D7A609FE1F42"
-    network: grpc
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: d1.awsstatic.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
-      short-id: "686c0ef0"
-    grpc-opts:
-      grpc-service-name: update
-  - name: "泰国直连-01 直连线路"
-    type: vless
-    server: www.visa.cn
-    port: 443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: tl.520783.xyz
-    client-fingerprint: edge
-    ws-opts:
-      path: /assets/dist/app-update-payload.dat
-      headers:
-        Host: tl.520783.xyz
-  - name: "泰国直连-02 直连线路"
-    type: vless
-    server: www.visa.cn
-    port: 443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: tl.520783.xyz
-    client-fingerprint: edge
-    ws-opts:
-      path: /assets/dist/app-update-payload.dat
-      headers:
-        Host: tl.520783.xyz
-  - name: "印度直连-01 直连线路"
-    type: vless
-    server: cfd.url0.top
-    port: 443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: in.520782.xyz
-    client-fingerprint: edge
-    skip-cert-verify: true
-    ws-opts:
-      path: /cdn/packages/runtime-core.tar.gz
-      headers:
-        Host: in.520782.xyz
-  - name: "印度直连-02 直连线路"
-    type: vless
-    server: cfd.url0.top
-    port: 443
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    network: ws
-    udp: true
-    packet-encoding: xudp
-    tls: true
-    servername: in.520782.xyz
-    client-fingerprint: edge
-    skip-cert-verify: true
-    ws-opts:
-      path: /cdn/packages/runtime-core.tar.gz
-      headers:
-        Host: in.520782.xyz
-  - name: "香港直连免费-01"
-    type: vless
-    server: "207.174.133.214"
-    port: 10000
-    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "香港直连免费-02"
-    type: vless
-    server: "207.174.133.214"
-    port: 10000
-    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "香港直连免费-03"
-    type: vless
-    server: "207.174.133.214"
-    port: 10000
-    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "香港直连免费-04"
-    type: vless
-    server: "207.174.133.214"
-    port: 10000
-    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "香港直连免费-05"
-    type: vless
-    server: "207.174.133.214"
-    port: 10000
-    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
-  - name: "香港直连免费-06"
-    type: vless
-    server: "207.174.133.214"
-    port: 10000
-    uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-    network: tcp
-    udp: true
-    packet-encoding: xudp
-    tls: false
+  - {name: 🇯🇵 日本高速01|CTCU|0.5x, server: cfyes.7770006.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: jp1-lx.7770006.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: jp1-lx.7770006.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36"}, path: /liangxin/data/jp}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速02|CTCU|0.5x, server: cfyes.7770006.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: jp2-lx.7770006.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: jp2-lx.7770006.xyz, User-Agent: "Mozilla/5.0 (Linux; Android 7.0; TRT-LX2 Build/HUAWEITRT-LX2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.125 Mobile Safari/537.36"}, path: /liangxin/data}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港高速01|BGP|CMCU, server: aws-link1.lxyun.xyz, port: 36458, client-fingerprint: safari, encryption: none, fingerprint: d5c39647e414c144b719bc49cb41c4b8f46f09f4cf26c863cae15c01d4a7b96a, flow: xtls-rprx-vision, network: tcp, servername: iosapps.itunes.apple.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港高速02|BGP|CMCU, server: aws-link2.lxyun.xyz, port: 28346, client-fingerprint: safari, encryption: none, fingerprint: af0f11574724e7ddd96f64eb77a450f71ce2de61ee5afd6f2e27ed7604a6a9b1, flow: xtls-rprx-vision, network: tcp, servername: www.lamer.com.hk, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港高速03|BGP|CMCU, server: aws-link3.lxyun.xyz, port: 27786, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: EYa4ic3GAxqznV61U-OOww-WKsu5wuQQptyS3fw7czM, short-id: "c50db39f"}, servername: www.lamer.com.hk, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港高速04|BGP|CMCU, server: aws-link4.lxyun.xyz, port: 23564, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: 3FPGTaxkfOM3nEUWUyCiqkH5oJGsOx-WxPJfADi1QWY, short-id: "7f369e14"}, servername: www.lamer.com.hk, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港高速05|BGP|CMCU, server: aws-link5.lxyun.xyz, port: 35332, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: a11gdDetacKBsiBBfhsPvanTGMtVyZEIvax7gU5Wplg, short-id: "9bf38508"}, servername: www.lamer.com.hk, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港01住宅IP|BGP|CTCM, server: cfyes.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: lx-hk1.7770008.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-hk1.7770008.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}, path: /liangxin/data/hk1}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港02住宅IP|BGP|CTCM, server: cfyes.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: lx-hk2.7770008.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-hk2.7770008.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}, path: /liangxin/data/hk2}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港03住宅IP|BGP|CTCM, server: cfyes.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: lx-hk3.7770008.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-hk3.7770008.xyz, User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"}, path: /liangxin/data/hk3}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港04住宅IP|BGP|CTCM, server: cfyes.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: lx-hk4.7770008.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-hk4.7770008.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"}, path: /liangxin/data/hk4}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港05住宅IP|BGP|CTCM, server: cfyes.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, network: ws, servername: lx-hk5.7770008.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-hk5.7770008.xyz, User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36"}, path: /liangxin/data/hk5}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇸🇬 新加坡高速01|BGP|CTCUCM, server: aws-link7.lxyun.xyz, port: 48574, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: lmxSayN8tUg2Dag2MPXrdqZ2SQK9K3OjlaKk8wVCRnc, short-id: "f8f18902"}, servername: www.lamer.com.sg, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇸🇬 新加坡高速02|BGP|CTCUCM, server: aws-link8.lxyun.xyz, port: 39645, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: x7VqpFP7_PrY4ebNw8hi8Ec5Tm5Upmt5JOdrN1M9VnQ, short-id: "2b3b0b93"}, servername: iosapps.itunes.apple.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇸🇬 新加坡高速03|BGP|CTCUCM, server: aws-link9.lxyun.xyz, port: 23587, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: H66PLLf6HkZwHk4oFqisfTawIvw2cxkEwk8Ue8sHZgA, short-id: "19b580ae"}, servername: iosapps.itunes.apple.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇸🇬 新加坡高速04|BGP|CTCUCM, server: aws-link30.lxyun.xyz, port: 23568, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: EjcM-ENrpWY8iIL82qJtQrZgRs4KlVqhdisqLAXonUY, short-id: "55d046dc"}, servername: www.lamer.com.hk, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇸🇬 新加坡高速05|BGP|CTCUCM, server: aws-link31.lxyun.xyz, port: 443, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: wXayfckurSM2zWeis7OAL_QVGm9wBLr0WYp2zFtJFAE, short-id: "c7487aeb"}, servername: download-porter.hoyoverse.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇸🇬 新加坡高速08|BGP|CTCU, server: cfyes.7770008.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: lx-1sg.lxy1015.top, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-1sg.lxy1015.top, User-Agent: "Mozilla/5.0 (Linux; Android 6.0.1; CPH1607 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36"}, path: /liangxin/sg1}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速01|BGP|CUCM, server: aws-link13.lxyun.xyz, port: 36574, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: sDG-KQk1BF7V83-xnmrWDouXxpPd_ZSxKcHrJJzbols, short-id: "32a3650d"}, servername: www.apple.com.cn, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速02|BGP|CUCM, server: aws-link14.lxyun.xyz, port: 25485, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: VOFSjjWT0wIH3Q0ntyEZd8WwksrIAb5gPt_3PBnEASg, short-id: "9c5b8c53"}, servername: www.apple.com.cn, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速03|BGP|CUCM, server: aws-link19.lxyun.xyz, port: 8654, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o, short-id: "6314e825"}, servername: download-porter.hoyoverse.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速04|BGP|CUCM, server: aws-link20.lxyun.xyz, port: 443, client-fingerprint: ios, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o, short-id: "6314e825"}, servername: download-porter.hoyoverse.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速05|BGP|CUCM, server: aws-link23.lxyun.xyz, port: 443, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: dLmUAqcdy4Z7iucApd9zjOhkXTjl-xt_eHumShIYW0c, short-id: "ba826a54"}, servername: download-porter.hoyoverse.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速07|BGP|CTCU, server: cfyes.7770006.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: jp3-lx.7770006.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: jp3-lx.7770006.xyz, User-Agent: "Mozilla/5.0 (Linux; Android 5.1.1; A37fw Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36"}, path: /liangxin/dash/jp}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇯🇵 日本高速09|BGP|CTCU, server: cfyes.7770006.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: jp4-lx.7770006.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: jp4-lx.7770006.xyz, User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}, path: /liangxin/download/jp}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国高速01|CTCU|0.1x, server: cfyes.777078.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: lx-us1.777078.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-us1.777078.xyz, User-Agent: "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"}, path: /liangxin/us}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国高速02|CTCU|0.1x, server: cfyes.777078.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: lx-us2.777078.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-us2.777078.xyz, User-Agent: "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3"}, path: /liangxin/us}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国高速03|CTCU|0.1x, server: cfyes.777078.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: lx-us3.777078.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-us3.777078.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"}, path: /liangxin/us}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国高速04|CTCU|0.1x, server: cfyes.777078.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: lx-us4.777078.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-us4.777078.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"}, path: /liangxin/us}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国高速05|CTCU|0.1x, server: cfyes.777078.xyz, port: 443, client-fingerprint: chrome, encryption: none, network: ws, servername: lx-us5.777078.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: lx-us5.777078.xyz, User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"}, path: /liangxin/us}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇬🇧 英国伦敦01|CTCU|0.1x, server: cfyes.777078.xyz, port: 443, client-fingerprint: ios, encryption: none, network: ws, servername: gb-lx.777078.xyz, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, ws-opts: {headers: {Host: gb-lx.777078.xyz, User-Agent: "Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36"}, path: /liangxin/gb1}, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇬🇧 英国伦敦02|CTCU|0.1x, server: 62.164.143.252, port: 443, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: a9I2uA3NNZA6uBAe3Tui9vZ8CG5MrMaYOifWrAdc0zg, short-id: "a8609be8"}, servername: download-porter.hoyoverse.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国洛杉矶01|流媒体|0.01x, server: lxyus1.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: ulU6wfyain_FQnYt23NGunTAfBQNLhIBY49mvekiQB0, short-id: "ca032f81"}, servername: iosapps.itunes.apple.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇺🇸 美国洛杉矶02|流媒体|0.01x, server: lxyus3.777078.xyz, port: 443, client-fingerprint: safari, encryption: none, flow: xtls-rprx-vision, network: tcp, reality-opts: {public-key: paFz5M87V_EcKgUk7C9MlHYCTkOMLTNVe-h-6mSHOAk, short-id: "cffc91ca"}, servername: iosapps.itunes.apple.com, tls: true, type: vless, udp: true, uuid: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, xudp: true, skip-cert-verify: true, tfo: false}
+  - {name: 🇭🇰 香港专线01|BGP|住宅IP, server: aws-linkhy1.lxyun.xyz, port: 443, down: "", fingerprint: 5343bfcb1c5db62de169584dd7ae238dc9a8f2659283f1ee99b06d744c644806, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: download-porter.hoyoverse.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇭🇰 香港专线02|BGP|住宅IP, server: aws-linkhy2.lxyun.xyz, port: 443, down: "", fingerprint: f39333d989d685541f08cb96cd8986f9854fed3674e5cc24c4bfbba81035dacf, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: www.hoyoverse.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇭🇰 香港专线03|BGP|住宅IP, server: aws-linkhy3.lxyun.xyz, port: 443, down: "", fingerprint: 24d0dd43ee022bb4b0fa0b1c75d276da6b6485038fb59804498f84b80f0689ca, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇭🇰 香港专线04|BGP|住宅IP, server: aws-linkhy4.lxyun.xyz, port: 443, down: "", fingerprint: ab4e4175bb4234fec92dec0977ec4c9933fe1e0b9f4fe98b8f7444c56360effd, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇭🇰 香港专线05|BGP|住宅IP, server: aws-linkhy5.lxyun.xyz, port: 443, down: "", fingerprint: c77f0fb1aef429ebc3f7e15078ea13c3cc9fe85d8c7a9bda9637f919e340d355, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: www.apple.com.cn, type: hysteria2, up: "", tfo: false}
+  - {name: 🇸🇬 新加坡专线01|BGP|流媒体, server: aws-linkhy9.lxyun.xyz, port: 60000, down: "", fingerprint: 2b6c9b75b2ef903fbe66ee91d1801941dea0ddb5429505ae3bce65e2fb17ad45, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇸🇬 新加坡专线02|BGP|流媒体, server: aws-linkhy10.lxyun.xyz, port: 60000, down: "", fingerprint: 2b6c9b75b2ef903fbe66ee91d1801941dea0ddb5429505ae3bce65e2fb17ad45, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇸🇬 新加坡专线03|BGP|流媒体, server: aws-linkhy11.lxyun.xyz, port: 60000, down: "", fingerprint: dd9dd03d942400ad4c1400879bda98f4fa097183aa9a91a1423cdd42a3e183d7, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇸🇬 新加坡专线04|BGP|流媒体, server: aws-linkhy12.lxyun.xyz, port: 60000, down: "", fingerprint: 064255322ff7fa4fc225b44e72e5347fb9094fccc3bdd14ddb006118296b3fd3, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇯🇵 日本专线01|BGP|流媒体, server: aws-linkhy15.lxyun.xyz, port: 60000, down: "", fingerprint: 95b89cf256ca58006f8d2f090bc8a6ca89b385f424852e82b59f2af384b142d7, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: bilibili-jp.biliimg.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇯🇵 日本专线02|BGP|流媒体, server: aws-linkhy16.lxyun.xyz, port: 60000, down: "", fingerprint: 95b89cf256ca58006f8d2f090bc8a6ca89b385f424852e82b59f2af384b142d7, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: bilibili-jp2.biliimg.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇯🇵 日本专线03|BGP|流媒体, server: aws-linkhy17.lxyun.xyz, port: 60000, down: "", fingerprint: a52eee8669d92360a913a3fc101157e2bdc182947a377831abbccc31928decce, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: bilibili-jp3.biliimg.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇯🇵 日本专线04|BGP|流媒体, server: aws-linkhy18.lxyun.xyz, port: 60000, down: "", fingerprint: a52eee8669d92360a913a3fc101157e2bdc182947a377831abbccc31928decce, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: bilibili-jp4.biliimg.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇨🇳 台湾专线01|BGP|流媒体, server: aws-linkhy22.lxyun.xyz, port: 443, down: "", fingerprint: 41bdd7599812d70f35e0fdafef794eb25b4f16d8735876038e414f9b8a29bf4c, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: bilibili-tw.biliimg.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇬🇧 英国伦敦02|流媒体|0.1x, server: 62.164.143.251, port: 60000, down: "", fingerprint: f7d837d9a8fd47ae4f18de5a72430fb02f7e4c6e37a8823db929a1e1b8792aa1, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: bilibili-gb.biliimg.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇺🇸 美国01|流媒体|0.1x, server: lxyus1.777078.xyz, port: 443, down: "", fingerprint: 4b10f090c73e5d841d56f81373b56168fd446a96adf85427738c6ef6c414b01b, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇺🇸 美国02|流媒体|0.1x, server: lxyus2.777078.xyz, port: 443, down: "", fingerprint: 58f2df9e444565f71bcdf624069d51ded4d699b648d59f1bf197e9aac859b9bc, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇺🇸 美国03|流媒体|0.1x, server: lxyus3.777078.xyz, port: 443, down: "", fingerprint: ee961590f9558c24cef02e44d1f54e9cd21fc929ae627f2e18fe5b3d67ca5561, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇺🇸 美国04|流媒体|0.1x, server: lxyus4.777078.xyz, port: 443, down: "", fingerprint: 4df742862fb9f529f841048ff99a914ae2ce83cbfa13ccf15618f72bc32f2650, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: iosapps.itunes.apple.com, type: hysteria2, up: "", tfo: false}
+  - {name: 🇺🇸 美国05|流媒体|0.1x, server: 203.10.97.121, port: 60000, down: "", fingerprint: 7883472b634b93a7ec09a020fdbd4b1ac7b0accc7569028dfaeb54c6384677c1, obfs: "", obfs-password: "", password: 94b3472a-ae1d-4ec0-957f-a5d8a61f978c, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, up: "", tfo: false}
+proxy-groups:
+  - name: 🚀 手动选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: ♻️ 自动选择
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 💬 即时通讯
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🎯 全球直连
+  - name: 🌐 社交媒体
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🎯 全球直连
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🚀 GitHub
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🎯 全球直连
+  - name: 🤖 ChatGPT
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🤖 AI服务
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎶 TikTok
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 📹 YouTube
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎥 Netflix
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎥 DisneyPlus
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎥 HBO
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎥 PrimeVideo
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎥 AppleTV+
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🎯 全球直连
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎥 Emby
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎻 Spotify
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 📺 Bahamut
+    type: select
+    proxies:
+      - 🇼🇸 台湾节点
+      - 🚀 手动选择
+      - 🎯 全球直连
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🌎 国外媒体
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🛒 国外电商
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+  - name: 🇬 谷歌服务
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🎮 Steam
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🚀 测速工具
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 手动选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇼🇸 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇬🇧 英国伦敦01|CTCU|0.1x
+      - 🇬🇧 英国伦敦02|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+      - 🇨🇳 台湾专线01|BGP|流媒体
+      - 🇬🇧 英国伦敦02|流媒体|0.1x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🔀 非标端口
+    type: select
+    proxies:
+      - 🐟 漏网之鱼
+      - 🎯 全球直连
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇭🇰 香港高速01|BGP|CMCU
+      - 🇭🇰 香港高速02|BGP|CMCU
+      - 🇭🇰 香港高速03|BGP|CMCU
+      - 🇭🇰 香港高速04|BGP|CMCU
+      - 🇭🇰 香港高速05|BGP|CMCU
+      - 🇭🇰 香港01住宅IP|BGP|CTCM
+      - 🇭🇰 香港02住宅IP|BGP|CTCM
+      - 🇭🇰 香港03住宅IP|BGP|CTCM
+      - 🇭🇰 香港04住宅IP|BGP|CTCM
+      - 🇭🇰 香港05住宅IP|BGP|CTCM
+      - 🇭🇰 香港专线01|BGP|住宅IP
+      - 🇭🇰 香港专线02|BGP|住宅IP
+      - 🇭🇰 香港专线03|BGP|住宅IP
+      - 🇭🇰 香港专线04|BGP|住宅IP
+      - 🇭🇰 香港专线05|BGP|住宅IP
+  - name: 🇺🇸 美国节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇺🇸 美国高速01|CTCU|0.1x
+      - 🇺🇸 美国高速02|CTCU|0.1x
+      - 🇺🇸 美国高速03|CTCU|0.1x
+      - 🇺🇸 美国高速04|CTCU|0.1x
+      - 🇺🇸 美国高速05|CTCU|0.1x
+      - 🇺🇸 美国洛杉矶01|流媒体|0.01x
+      - 🇺🇸 美国洛杉矶02|流媒体|0.01x
+      - 🇺🇸 美国01|流媒体|0.1x
+      - 🇺🇸 美国02|流媒体|0.1x
+      - 🇺🇸 美国03|流媒体|0.1x
+      - 🇺🇸 美国04|流媒体|0.1x
+      - 🇺🇸 美国05|流媒体|0.1x
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇯🇵 日本高速01|CTCU|0.5x
+      - 🇯🇵 日本高速02|CTCU|0.5x
+      - 🇯🇵 日本高速01|BGP|CUCM
+      - 🇯🇵 日本高速02|BGP|CUCM
+      - 🇯🇵 日本高速03|BGP|CUCM
+      - 🇯🇵 日本高速04|BGP|CUCM
+      - 🇯🇵 日本高速05|BGP|CUCM
+      - 🇯🇵 日本高速07|BGP|CTCU
+      - 🇯🇵 日本高速09|BGP|CTCU
+      - 🇯🇵 日本专线01|BGP|流媒体
+      - 🇯🇵 日本专线02|BGP|流媒体
+      - 🇯🇵 日本专线03|BGP|流媒体
+      - 🇯🇵 日本专线04|BGP|流媒体
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇸🇬 新加坡高速01|BGP|CTCUCM
+      - 🇸🇬 新加坡高速02|BGP|CTCUCM
+      - 🇸🇬 新加坡高速03|BGP|CTCUCM
+      - 🇸🇬 新加坡高速04|BGP|CTCUCM
+      - 🇸🇬 新加坡高速05|BGP|CTCUCM
+      - 🇸🇬 新加坡高速08|BGP|CTCU
+      - 🇸🇬 新加坡专线01|BGP|流媒体
+      - 🇸🇬 新加坡专线02|BGP|流媒体
+      - 🇸🇬 新加坡专线03|BGP|流媒体
+      - 🇸🇬 新加坡专线04|BGP|流媒体
+  - name: 🇼🇸 台湾节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇨🇳 台湾专线01|BGP|流媒体
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🎯 全球直连
+    type: select
+    url: http://wifi.vivo.com.cn/generate_204
+    proxies:
+      - DIRECT
+rules:
+  - GEOSITE,private,🎯 全球直连
+  - GEOIP,private,🎯 全球直连,no-resolve
+  - RULE-SET,Custom_Direct_Domain,🎯 全球直连
+  - RULE-SET,Custom_Direct_Classical_IP,🎯 全球直连
+  - RULE-SET,Custom_Proxy_Domain,🚀 手动选择
+  - RULE-SET,Custom_Proxy_Classical_IP,🚀 手动选择
+  - GEOSITE,google-cn,🎯 全球直连
+  - GEOSITE,category-games@cn,🎯 全球直连
+  - RULE-SET,Steam_CDN_Domain,🎯 全球直连
+  - RULE-SET,Steam_CDN_Classical_IP,🎯 全球直连
+  - GEOSITE,category-game-platforms-download,🎯 全球直连
+  - GEOSITE,category-public-tracker,🎯 全球直连
+  - GEOSITE,category-communication,💬 即时通讯
+  - GEOSITE,category-social-media-!cn,🌐 社交媒体
+  - GEOSITE,openai,🤖 ChatGPT
+  - GEOSITE,category-ai-!cn,🤖 AI服务
+  - GEOSITE,github,🚀 GitHub
+  - GEOSITE,category-speedtest,🚀 测速工具
+  - GEOSITE,steam,🎮 Steam
+  - GEOSITE,youtube,📹 YouTube
+  - GEOSITE,apple-tvplus,🎥 AppleTV+
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
+  - GEOSITE,googlefcm,📢 谷歌FCM
+  - GEOSITE,google,🇬 谷歌服务
+  - GEOSITE,tiktok,🎶 TikTok
+  - GEOSITE,netflix,🎥 Netflix
+  - GEOSITE,disney,🎥 DisneyPlus
+  - GEOSITE,hbo,🎥 HBO
+  - GEOSITE,primevideo,🎥 PrimeVideo
+  - GEOSITE,category-emby,🎥 Emby
+  - GEOSITE,spotify,🎻 Spotify
+  - GEOSITE,bahamut,📺 Bahamut
+  - GEOSITE,category-games,🎮 游戏平台
+  - GEOSITE,category-entertainment,🌎 国外媒体
+  - GEOSITE,category-ecommerce,🛒 国外电商
+  - GEOSITE,gfw,🚀 手动选择
+  - GEOIP,telegram,💬 即时通讯,no-resolve
+  - GEOIP,twitter,🌐 社交媒体,no-resolve
+  - GEOIP,facebook,🌐 社交媒体,no-resolve
+  - GEOIP,google,🇬 谷歌服务,no-resolve
+  - GEOIP,netflix,🎥 Netflix,no-resolve
+  - GEOSITE,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连,no-resolve
+  - RULE-SET,Custom_Port_Direct,🔀 非标端口
+  - MATCH,🐟 漏网之鱼
+rule-providers:
+  Custom_Direct_Domain:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.mrs
+    path: ./providers/13512472527164507696_domain.mrs
+    format: mrs
+    interval: 1800
+  Custom_Direct_Classical_IP:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical_IP.yaml
+    path: ./providers/11839166386161111150.yaml
+    interval: 28800
+  Custom_Proxy_Domain:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs
+    path: ./providers/9585911360851746603_domain.mrs
+    format: mrs
+    interval: 28800
+  Custom_Proxy_Classical_IP:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Classical_IP.yaml
+    path: ./providers/6254835466703347311.yaml
+    interval: 28800
+  Steam_CDN_Domain:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Domain.mrs
+    path: ./providers/9386691850470719955_domain.mrs
+    format: mrs
+    interval: 28800
+  Steam_CDN_Classical_IP:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Classical_IP.yaml
+    path: ./providers/16010555855654554967.yaml
+    interval: 28800
+  Custom_Port_Direct:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml
+    path: ./providers/4565834382491491750.yaml
+    interval: 28800
